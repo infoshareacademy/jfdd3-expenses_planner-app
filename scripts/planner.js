@@ -1,8 +1,6 @@
 'use strict';
 
-$('#planner').click(openPlanner);
-
-var openPlanner = function (){
+$('#planner').click(function() {
     $('.intro').css({
         display: 'none'
     });
@@ -12,5 +10,8 @@ var openPlanner = function (){
         center: {lat: 51.540, lng: 15.546},
         zoom: 5
     });
+});
 
-}
+//var openPlanner = function () {
+//
+//}
