@@ -93,6 +93,7 @@ var $chart = AmCharts.makeChart("chartdiv",
             {
                 "id": "ValueAxis-1",
                 "title": ""
+
             }
         ],
         "allLabels": [],
