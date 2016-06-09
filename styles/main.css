@@ -28,7 +28,6 @@ div, main {
     background-position: center top 2vh;
     background-repeat: no-repeat;
     background-size: 15vh;
-
     display: flex;
     justify-content: center;
 }
