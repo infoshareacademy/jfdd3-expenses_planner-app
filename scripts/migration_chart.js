@@ -9,7 +9,7 @@ AmCharts.ready(function(migration) {
     chart.dataProvider = $chart;
     chart.categoryField = "category";
    var graph = new AmCharts.AmGraph();
-    graph.valueField = "column-1";
+    graph.valueField = "poland";
     graph.type = "smothedline";
     chart.addGraph(graph);
 
@@ -45,7 +45,7 @@ var $chart = AmCharts.makeChart("chartdiv",
                 "lineThickness": 3,
                 "title": "Poland",
                 "type": "smoothedLine",
-                "valueField": "column-1"
+                "valueField": "poland"
             },
             {
                 "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -55,7 +55,7 @@ var $chart = AmCharts.makeChart("chartdiv",
                 "lineAlpha": 1,
                 "lineThickness": 3,
                 "title": "Hungary",
-                "valueField": "column-2"
+                "valueField": "hungary"
             },
             {
                 "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -65,7 +65,7 @@ var $chart = AmCharts.makeChart("chartdiv",
                 "lineAlpha": 1,
                 "lineThickness": 3,
                 "title": "Lithuania",
-                "valueField": "column-3"
+                "valueField": "lithuania"
             },
             {
                 "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -75,7 +75,7 @@ var $chart = AmCharts.makeChart("chartdiv",
                 "lineAlpha": 1,
                 "lineThickness": 3,
                 "title": "Latvia",
-                "valueField": "column-4"
+                "valueField": "latvia"
             },
             {
                 "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -85,8 +85,8 @@ var $chart = AmCharts.makeChart("chartdiv",
                 "lineAlpha": 1,
                 "lineThickness": 3,
                 "title": "Estonia",
-                "valueField": "column-5"
-            },
+                "valueField": "estonia"
+            }
         ],
         "guides": [],
         "valueAxes": [
@@ -101,164 +101,164 @@ var $chart = AmCharts.makeChart("chartdiv",
         "dataProvider": [
             {
                 "category": "1995",
-                "column-1": -18224,
-                "column-2": 17906,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -18224,
+                "hungary": 17906,
+                "lithuania": -23668,
+                "latvia": -13713,
+                "estonia": -15564
             },
             {
                 "category": "1996",
-                "column-1": -12766,
-                "column-2": 17876,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -12766,
+                "hungary": 17876,
+                "lithuania": -23369,
+                "latvia": -10081,
+                "estonia": -13418
 
             },
             {
                 "category": "1997",
-                "column-1": -11797,
-                "column-2": 17561,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -11797,
+                "hungary": 17561,
+                "lithuania": -22421,
+                "latvia": -9420,
+                "estonia": -6927
             },
             {
                 "category": "1998",
-                "column-1": -13261,
-                "column-2": 17261,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -13261,
+                "hungary": 17261,
+                "lithuania": -22122,
+                "latvia": -5751,
+                "estonia": -6559
             },
             {
                 "category": "1999",
-                "column-1": -14011,
-                "column-2": 16793,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -14011,
+                "hungary": 16793,
+                "lithuania": -20739,
+                "latvia": -4085,
+                "estonia": 28035
             },
             {
                 "category": "2000",
-                "column-1": -19669,
-                "column-2": 16658,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -19669,
+                "hungary": 16658,
+                "lithuania": -20306,
+                "latvia": -16428,
+                "estonia": -3194
             },
             {
                 "category": "2001",
-                "column-1": -16743,
-                "column-2": 9691,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -16743,
+                "hungary": 9691,
+                "lithuania": -23147,
+                "latvia": -19163,
+                "estonia": -3326
             },
             {
                 "category": "2002",
-                "column-1": -17945,
-                "column-2": 3538,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -17945,
+                "hungary": 3538,
+                "lithuania": -11609,
+                "latvia": -9195,
+                "estonia": -2966
             },
             {
                 "category": "2003",
-                "column-1": -13765,
-                "column-2": 15556,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -13765,
+                "hungary": 15556,
+                "lithuania": -21555,
+                "latvia": -11584,
+                "estonia": -3824
             },
             {
                 "category": "2004",
-                "column-1": -9382,
-                "column-2": 18162,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -9382,
+                "hungary": 18162,
+                "lithuania": -32138,
+                "latvia": -15323,
+                "estonia": -3707
             },
             {
                 "category": "2005",
-                "column-1": -12878,
-                "column-2": 17268,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -12878,
+                "hungary": 17268,
+                "lithuania": -51096,
+                "latvia": -10952,
+                "estonia": -5184
             },
             {
                 "category": "2006",
-                "column-1": -36134,
-                "column-2": 21309,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -36134,
+                "hungary": 21309,
+                "lithuania": -24645,
+                "latvia": -8807,
+                "estonia": -5341
             },
             {
                 "category": "2007",
-                "column-1": -20485,
-                "column-2": 14568,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -20485,
+                "hungary": 14568,
+                "lithuania": -21774,
+                "latvia": -7946,
+                "estonia": -2846
             },
             {
                 "category": "2008",
-                "column-1": -14865,
-                "column-2": 16452,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -14865,
+                "hungary": 16452,
+                "lithuania": -16453,
+                "latvia": -22367,
+                "estonia": -2053
             },
             {
                 "category": "2009",
-                "column-1": -1196,
-                "column-2": 17321,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -1196,
+                "hungary": 17321,
+                "lithuania": -32013,
+                "latvia": -34477,
+                "estonia": -2132
             },
             {
                 "category": "2010",
-                "column-1": 5027,
-                "column-2": 11519,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": 5027,
+                "hungary": 11519,
+                "lithuania": -77944,
+                "latvia": -35640,
+                "estonia": -3665
             },
             {
                 "category": "2011",
-                "column-1": -11841,
-                "column-2": 12755,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -11841,
+                "hungary": 12755,
+                "lithuania": -38178,
+                "latvia": -20077,
+                "estonia": -3878
             },
             {
                 "category": "2012",
-                "column-1": -2726,
-                "column-2": 16044,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -2726,
+                "hungary": 16044,
+                "lithuania": -21257,
+                "latvia": -11860,
+                "estonia": -3649
             },
             {
                 "category": "2013",
-                "column-1": -26943,
-                "column-2": 5720,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -26943,
+                "hungary": 5720,
+                "lithuania": -16807,
+                "latvia": -14262,
+                "estonia": -2642
             },
             {
                 "category": "2014",
-                "column-1": -10935,
-                "column-2": 11219,
-                "column-3": 10000,
-                "column-4": 15000,
-                "column-5": 5000
+                "poland": -10935,
+                "hungary": 11219,
+                "lithuania": -12327,
+                "latvia": -8652,
+                "estonia": -615
             }
         ]
     }

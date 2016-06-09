@@ -16,6 +16,14 @@ div, main {
     background-repeat: no-repeat;
     width: 100%;
 }
+
+#chartdiv {
+    align-content: center;
+    min-width: 420px;
+    max-width: 1600px;
+    height: 75vh;
+}
+
 .menu {
     background-color: white;
     height: 25vh;
