@@ -25,10 +25,9 @@ div, main {
 #planner, #currency, #salary, #migration {
     height: 100%;
     background-image: url("../images/icon_planner.png");
-    background-position: center top 2vh;
+    background-position: center top 1vh;
     background-repeat: no-repeat;
     background-size: 15vh;
-
     display: flex;
     justify-content: center;
 }
