@@ -11,7 +11,13 @@ $('#planner-icon').click(function() {
     var mapDiv = document.getElementById('map');
     var map = new google.maps.Map(mapDiv, {
         center: {lat: 51.540, lng: 15.546},
-        zoom: 5
+        zoom: 5,
+        mapTypeControl: true,
+        mapTypeControlOptions:
+        {
+            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+            position: google.maps.ControlPosition.TOP
+        }
     });
 
     var input = document.getElementById('pac-input');
@@ -19,7 +25,7 @@ $('#planner-icon').click(function() {
     var autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo('bounds', map);
 
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(input);
 
     var infowindow = new google.maps.InfoWindow();
     var marker = new google.maps.Marker({
@@ -56,7 +62,3 @@ $('#planner-icon').click(function() {
         infowindow.open(map, marker);
     });
 });
-
-//var openPlanner = function () {
-//
-//}
