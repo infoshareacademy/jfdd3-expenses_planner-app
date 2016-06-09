@@ -9,7 +9,7 @@ div, main {
 
 .intro {
     background-color: #5bc0de;
-    height: 70vh;
+    height: 75vh;
     background-image: url("../images/banner.jpg");
     background-size: cover;
     background-position: center top;
@@ -18,17 +18,16 @@ div, main {
 }
 .menu {
     background-color: white;
-    height: 30vh;
+    height: 25vh;
     padding: 0 !important;
 }
 
 #planner, #currency, #salary, #migration {
     height: 100%;
-    background-image: url("../images/map_icon.png");
-    background-position: center top 2vh;
+    background-image: url("../images/icon_planner.png");
+    background-position: center top 1vh;
     background-repeat: no-repeat;
-    background-size: 20vh;
-
+    background-size: 15vh;
     display: flex;
     justify-content: center;
 }
@@ -38,17 +37,16 @@ p {
 }
 
 #currency {
-    background-color: yellow;
+    background-image: url("../images/icon_currency.png");
     height: 100%;
 }
 
 #salary {
     height: 100%;
-    background-color: brown;
+    background-image: url("../images/icon_salary.png");
 }
 
 #migration {
     height: 100%;
-    background-color: purple;
-    background-image: url("../images/migration_icon.png");
+    background-image: url("../images/icon_chart.png");
 }
