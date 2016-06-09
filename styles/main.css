@@ -49,4 +49,5 @@ p {
 #migration {
     height: 100%;
     background-color: purple;
+    background-image: url("../images/migration_icon.png");
 }
