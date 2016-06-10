@@ -1,14 +1,16 @@
 'use strict';
+//
+//$('#planner-icon').click(function() {
+//    $('.intro').css({
+//        display: 'none'
+//    });
+//    $('#planner').css({
+//        display: 'block'
+//    });
+//});
 
-$('#planner-icon').click(function() {
-    $('.intro').css({
-        display: 'none'
-    });
-    $('#planner').css({
-        display: 'block'
-    });
-//$(document.ready(function() {
-    var mapDiv = document.getElementById('map');
+$(document).ready(function() {
+    var mapDiv = $('#map').get(0);
     var map = new google.maps.Map(mapDiv, {
         center: {lat: 51.540, lng: 15.546},
         zoom: 5,
@@ -61,4 +63,4 @@ $('#planner-icon').click(function() {
             place.formatted_address);
         infowindow.open(map, marker);
     });
-}));
+});
