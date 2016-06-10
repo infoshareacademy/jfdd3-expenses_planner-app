@@ -26,7 +26,7 @@ $(document).ready(function () {
     });
 
 
-    $('.pages div').hide();
+    $('.pages > div').hide();
 // Show chosen div, and hide all others
     $(".menu div").click(function () {
         $('.pages > div').hide();

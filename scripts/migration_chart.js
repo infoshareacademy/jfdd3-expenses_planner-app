@@ -1,11 +1,8 @@
-/**
- * Created by dawid on 09.06.16.
- */
-
 'use strict';
 
 AmCharts.ready(function(migration) {
-   var chart = new AmCharts.AmSerialChart();
+
+    var chart = new AmCharts.AmSerialChart();
     chart.dataProvider = $chart;
     chart.categoryField = "category";
    var graph = new AmCharts.AmGraph();
@@ -28,21 +25,24 @@ var $chart = AmCharts.makeChart("chartdiv",
         "depth3D": 100,
         "marginRight": 60,
         "marginTop": 60,
-        "startDuration": 1,
+        "startDuration": 0,
         "fontSize": 13,
         "theme": "black",
         "categoryAxis": {
             "gridPosition": "start"
         },
         "trendLines": [],
+        "chartCursor": [{
+           "enable": true
+        }],
         "graphs": [
             {
                 "balloonText": "[[title]] of [[category]]:[[value]]",
                 "bullet": "round",
                 "bulletSize": 10,
                 "id": "AmGraph-1",
-                "lineAlpha": 1,
-                "lineThickness": 3,
+                "lineAlpha": 2,
+                "lineThickness": 4,
                 "title": "Poland",
                 "type": "smoothedLine",
                 "valueField": "poland"
@@ -52,8 +52,8 @@ var $chart = AmCharts.makeChart("chartdiv",
                 "bullet": "round",
                 "bulletSize": 10,
                 "id": "AmGraph-2",
-                "lineAlpha": 1,
-                "lineThickness": 3,
+                "lineAlpha": 2,
+                "lineThickness": 4,
                 "title": "Hungary",
                 "valueField": "hungary"
             },
@@ -92,13 +92,24 @@ var $chart = AmCharts.makeChart("chartdiv",
         "valueAxes": [
             {
                 "id": "ValueAxis-1",
-                "title": ""
+                "title": "Wskaźnik migracji w napływie i odpływie ludzi"
 
             }
         ],
         "allLabels": [],
         "balloon": {},
-        "titles": [],
+        "legend": {
+            "enabled": true,
+            "useGraphSettings": true,
+            "align": "center"
+        },
+        "titles": [
+            {
+                "id": "Title-1",
+                "size": 15,
+                "text": "Wykres migracji dla krajów Bałtyckich i Europy Środkowej"
+            }
+        ],
         "dataProvider": [
             {
                 "category": "1995",
