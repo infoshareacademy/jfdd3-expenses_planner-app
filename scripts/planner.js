@@ -7,7 +7,7 @@ $('#planner-icon').click(function() {
     $('#planner').css({
         display: 'block'
     });
-
+//$(document.ready(function() {
     var mapDiv = document.getElementById('map');
     var map = new google.maps.Map(mapDiv, {
         center: {lat: 51.540, lng: 15.546},
@@ -61,4 +61,4 @@ $('#planner-icon').click(function() {
             place.formatted_address);
         infowindow.open(map, marker);
     });
-});
+}));
