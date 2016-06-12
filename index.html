@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" type = "text/css" href = "styles/reset.css">
-    <link rel = "stylesheet" type = "text/css" href = "styles/main.css">
-    <link rel = "stylesheet" type = "text/css" href = "currency/styleofcurrency.css">
-    <link rel = "stylesheet" type = "text/css" href = "styles/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="currency/styleofcurrency.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap/bootstrap.css">
 
     <title>Title</title>
 </head>
@@ -15,15 +15,35 @@
     <div class="header col-xs-12 intro"></div>
     <div class="pages">
         <div class="header col-xs-12" id="plannerContainer"></div>
-        <div class="header col-xs-12" id="currencyContainer"></div>
+        <div class="header col-xs-12" id="currencyContainer">
+            <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
+            <form action="calculator">
+                Kwota : <input type="text" name="FirstName"><br>
+                Przelicz z : <input type="text" name="fromCurrency"><br>
+                Przelicz na : <input type="text" name="toCurrency"><br>
+                <input type="submit" value="Oblicz">
+            </form>
+        </div>
         <div class="header col-xs-12" id="salaryContainer"></div>
         <div class="header col-xs-12" id="migrationContainer"></div>
     </div>
     <div class="menu col-xs-12">
-        <a href="#" ><div id="planner" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">PLANOWANIE TRASY</p></div></a>
-        <a href="#"><div id="currency" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">KURSY WALUT</p></div></a>
-        <a href="#" ><div id="salary" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">WYNAGRODZENIE</p></div></a>
-        <a href="#" ><div id="migration" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">WYKRES MIGRACJI</p></div></a>
+        <a href="#">
+            <div id="planner" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">PLANOWANIE
+                TRASY</p></div>
+        </a>
+        <a href="#">
+            <div id="currency" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">KURSY WALUT</p>
+            </div>
+        </a>
+        <a href="#">
+            <div id="salary" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">WYNAGRODZENIE</p>
+            </div>
+        </a>
+        <a href="#">
+            <div id="migration" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">WYKRES
+                MIGRACJI</p></div>
+        </a>
 
     </div>
 </main>
