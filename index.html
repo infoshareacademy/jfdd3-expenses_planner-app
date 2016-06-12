@@ -17,12 +17,31 @@
         <div class="header col-xs-12" id="plannerContainer"></div>
         <div class="header col-xs-12" id="currencyContainer">
             <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
-            <form action="calculator">
-                Kwota : <input type="text" name="FirstName"><br>
-                Przelicz z : <input type="text" name="fromCurrency"><br>
-                Przelicz na : <input type="text" name="toCurrency"><br>
-                <input type="submit" value="Oblicz">
-            </form>
+            <br>
+                <form>
+                    <fieldset class="form-group">
+                        <label for="formGroupExampleInput">Kwota</label>
+                        <br>
+                        <div class="col-sm-5">
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="formGroupExampleInput">Przelicz z </label>
+                        <br>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="formGroupExampleInput">Przelicz na</label>
+                        <br>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
         </div>
         <div class="header col-xs-12" id="salaryContainer"></div>
         <div class="header col-xs-12" id="migrationContainer"></div>
