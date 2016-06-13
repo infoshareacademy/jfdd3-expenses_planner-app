@@ -43,9 +43,16 @@ $(document).ready(function () {
 
             });
 
+            $('#currencyResult').on('change', (function myCounting() {
+                var score = parseFloat($('#quantity').val()) * parseFloat($('#selectname').val()) * parseFloat($('#selectSecondname').val());
+                if (isNaN(score)) {
+                    $('#currencyResult').text();
+                }
+                else {
+                    $('#currencyResult').text(score);
+                }
 
-
-
+            } ));
             // $('#currencyContainer').append(table);
             // $('table').hide();
             // $('#value2').click(function () {
