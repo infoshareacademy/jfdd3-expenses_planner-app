@@ -9,10 +9,14 @@ div, main {
 
 .logo_main {
     background-image: url("../images/logo_EXPNS$.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     position: absolute;
     z-index: 1;
     top:0;
     left: 15%;
+    height: 10vh;
     padding: 10px 10px;
     background-color: white;
     border-bottom-left-radius: 20px;
@@ -81,7 +85,7 @@ div, main {
     padding: 0 !important;
 }
 
-#planner-icon, #currency-icon, #salary-icon, #migration-icon {
+#planner, #currency, #salary, #migration {
     height: 100%;
     background-image: url("../images/icon_planner.png");
     background-position: center top 1vh;
@@ -96,17 +100,17 @@ p {
     align-self: flex-end;
 }
 
-#currency-icon {
+#currency {
     background-image: url("../images/icon_currency.png");
     height: 100%;
 }
 
-#salary-icon {
+#salary {
     height: 100%;
     background-image: url("../images/icon_salary.png");
 }
 
-#migration-icon {
+#migration {
     height: 100%;
     background-image: url("../images/icon_chart.png");
 }

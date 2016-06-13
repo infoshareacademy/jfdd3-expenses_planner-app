@@ -26,11 +26,11 @@ $(document).ready(function () {
     });
 
 
-//    $('.pages > div').hide();
-//// Show chosen div, and hide all others
-//    $(".menu div").click(function () {
-//        $('.pages > div').hide();
-//        $('#' + $(this).attr('id') + "Container").show();
-//        $('.intro').hide();
-//    });
+    $('.pages > div').hide();
+// Show chosen div, and hide all others
+    $(".menu div").click(function () {
+        $('.pages > div').hide();
+        $('#' + $(this).attr('id') + "Container").show();
+        $('.intro').hide();
+    });
 });

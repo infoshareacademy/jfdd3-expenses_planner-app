@@ -1,13 +1,5 @@
 'use strict';
-//
-//$('#planner-icon').click(function() {
-//    $('.intro').css({
-//        display: 'none'
-//    });
-//    $('#planner').css({
-//        display: 'block'
-//    });
-//});
+
 
 $(document).ready(function() {
     var mapDiv = $('#map').get(0);
