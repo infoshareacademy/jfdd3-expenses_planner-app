@@ -115,4 +115,12 @@ p {
     background-image: url("../images/icon_chart.png");
 }
 
-#pl
+#migrationContainer {
+    background-color: black;
+}
+#chartdiv {
+    align-content: center;
+    min-width: 420px;
+    max-width: 1600px;
+    height: 75vh;
+}
