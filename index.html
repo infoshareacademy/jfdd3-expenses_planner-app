@@ -17,7 +17,6 @@
             <div class="pages">
                 <div class="header col-xs-12" id="plannerContainer">
                     <div id="planner_page">
-                        <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
                         <div id="map"></div>
                         <div class="sidebar"></div>
                     </div>
@@ -38,11 +37,12 @@
         <script type="text/javascript" src="scripts/libs/jquery-2.2.3.min.js" ></script>
         <script type="text/javascript" src="scripts/libs/bootstrap.js"></script>
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
 
         <script type="text/javascript" src="scripts/planner.js"></script>
         <script type="text/javascript" src="scripts/currencyInformation.js"></script>
         <script type="text/javascript" src="scripts/salary.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=showMap"></script>
 
         <script type="text/javascript" src="scripts/amcharts_script/amcharts/amcharts.js"></script>
         <script type="text/javascript" src="scripts/amcharts_script/amcharts/serial.js"></script>

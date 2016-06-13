@@ -4,6 +4,7 @@ $(document).ready(setupMap);
 function setupMap() {
     $('#planner').click(showMap);
 }
+
 function showMap() {
     var mapDiv = $('#map').get(0);
     var map = new google.maps.Map(mapDiv, {
@@ -16,13 +17,14 @@ function showMap() {
             position: google.maps.ControlPosition.TOP
         }
     });
+    window.MapInstance = map;
     //TODO: pomyśleć nad podziałem na mniejsze funkcje
     //init();
     //addAutocompleteControl();
     //addMarkerListener();
     //addPlaceChangeListener();
 
-    var input = document.getElementById('pac-input');
+    var input = $('<input id="pac-input" class="controls" type="text" placeholder="Enter a location">').get(0);
 
     var autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo('bounds', map);
