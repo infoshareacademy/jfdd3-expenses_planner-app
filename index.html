@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link rel="stylesheet" type="text/css" href="currency/styleofcurrency.css">
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap/bootstrap.css">
 
     <title>Title</title>
 </head>
@@ -16,32 +16,47 @@
     <div class="pages">
         <div class="header col-xs-12" id="plannerContainer"></div>
         <div class="header col-xs-12" id="currencyContainer">
-            <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
-            <br>
+            <div id="calculatorform" class="col-sm-6">
+                <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
+                <br>
+
+
                 <form>
                     <fieldset class="form-group">
                         <label for="formGroupExampleInput">Kwota</label>
                         <br>
+
                         <div class="col-sm-5">
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                            <input type="text" class="form-control" id="formGroupExampleInput"
+                                   placeholder="Example input">
                         </div>
                     </fieldset>
                     <fieldset class="form-group">
                         <label for="formGroupExampleInput">Przelicz z </label>
                         <br>
+
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                            <select type="text" class="form-control selectpicker" id="selectname"
+                                    placeholder="symbol-waluta">
+                            </select>
                         </div>
                     </fieldset>
                     <fieldset class="form-group">
                         <label for="formGroupExampleInput">Przelicz na</label>
                         <br>
+
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                            <select type="text" class="form-control" id="selectSecondname"
+                                   placeholder="Example input">
+                            </select>
                         </div>
                     </fieldset>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+            </div>
+            <div id="currencytable" class="col-sm-6">
+                KURS WALUT
+            </div>
         </div>
         <div class="header col-xs-12" id="salaryContainer"></div>
         <div class="header col-xs-12" id="migrationContainer"></div>

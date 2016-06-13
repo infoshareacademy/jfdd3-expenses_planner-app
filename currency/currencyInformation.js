@@ -12,15 +12,41 @@ $(document).ready(function () {
         success: function (data) {
             var exchangeRate = data[0].rates;
             var table = $('<table>');
+            var row = $('<tr>');
+            row.append($('<td>').text("Symbol"));
+            row.append($('<td>').text("Nazwa waluty"));
+            row.append($('<td>').text("Kurs"));
+            table.append(row);
+            $('#currencytable').append(table);
+
+
             exchangeRate.forEach(function (value) {
-                var row = $('<tr>');
+                row = $('<tr>');
                 row.append($('<td>').text(value.code));
                 row.append($('<td>').text(value.currency));
                 row.append($('<td>').text(value.mid));
-
-                // var kod = $('<div>').text(value.code + value.currency + value.mid);
                 table.append(row);
+                $('#currencytable').append(table);
+
             });
+
+            exchangeRate.forEach(function (item) {
+                var option = $('<option>');
+                $('#selectname').append(option.text(item.code + item.currency));
+                $('#selectname').append(option.attr('label', item.code + " " + "-" + " " + item.currency));
+                $('#selectname').append(option.attr('value', item.mid));
+            });
+            exchangeRate.forEach(function (items) {
+                var option = $('<option>');
+                $('#selectSecondname').append(option.text(items.code + items.currency));
+                $('#selectSecondname').append(option.attr('label', items.code + " " + "-" + " " + items.currency));
+                $('#selectSecondname').append(option.attr('value', items.mid));
+
+            });
+
+
+
+
             // $('#currencyContainer').append(table);
             // $('table').hide();
             // $('#value2').click(function () {
@@ -29,7 +55,7 @@ $(document).ready(function () {
             // });
             // $('#currencyContainer').append($('<div class="calculatorTitle  col-sm-12">'));
             // $('.calculatorTitle').text('Kalkulator walutowy');
-            
+
 
             // exchangeRate.forEach(function(value){
             //
