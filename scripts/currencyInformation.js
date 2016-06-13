@@ -30,6 +30,7 @@ $(document).ready(function () {
     $(".menu div").click(function () {
         $('.pages > div').hide();
         $('#' + $(this).attr('id') + "Container").show();
+        google.maps.event.trigger(MapInstance,'resize');
         $('.intro').hide();
     });
 });
