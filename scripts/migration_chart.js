@@ -7,7 +7,7 @@ AmCharts.ready(function(migration) {
     chart.categoryField = "category";
    var graph = new AmCharts.AmGraph();
     graph.valueField = "poland";
-    graph.type = "smothedline";
+    graph.type = "column";
     chart.addGraph(graph);
 
     chart.write('chartdiv');
@@ -20,13 +20,16 @@ var $chart = AmCharts.makeChart("chartdiv",
     {
         "type": "serial",
         "categoryField": "category",
-        "angle": 30,
+
         "autoMarginOffset": 40,
-        "depth3D": 100,
+
         "marginRight": 60,
         "marginTop": 60,
-        "startDuration": 0,
+
+        "startDuration": 1,
+
         "fontSize": 13,
+
         "theme": "black",
         "categoryAxis": {
             "gridPosition": "start"
@@ -37,48 +40,47 @@ var $chart = AmCharts.makeChart("chartdiv",
         }],
         "graphs": [
             {
-                "balloonText": "[[title]] of [[category]]:[[value]]",
+                "balloonText": "[[title]] w [[category]]:[[value]]",
                 "bullet": "round",
                 "bulletSize": 10,
                 "id": "AmGraph-1",
                 "lineAlpha": 2,
                 "lineThickness": 4,
-                "title": "Poland",
-                "type": "smoothedLine",
+                "title": "Polska",
                 "valueField": "poland"
             },
             {
-                "balloonText": "[[title]] in [[category]]:[[value]]",
+                "balloonText": "[[title]] w [[category]]:[[value]]",
                 "bullet": "round",
                 "bulletSize": 10,
                 "id": "AmGraph-2",
                 "lineAlpha": 2,
                 "lineThickness": 4,
-                "title": "Hungary",
+                "title": "Węgry",
                 "valueField": "hungary"
             },
             {
-                "balloonText": "[[title]] in [[category]]:[[value]]",
+                "balloonText": "[[title]] w [[category]]:[[value]]",
                 "bullet": "round",
                 "bulletSize": 10,
                 "id": "AmGraph-3",
                 "lineAlpha": 1,
                 "lineThickness": 3,
-                "title": "Lithuania",
+                "title": "Litwa",
                 "valueField": "lithuania"
             },
             {
-                "balloonText": "[[title]] in [[category]]:[[value]]",
+                "balloonText": "[[title]] w [[category]]:[[value]]",
                 "bullet": "round",
                 "bulletSize": 10,
                 "id": "AmGraph-4",
                 "lineAlpha": 1,
                 "lineThickness": 3,
-                "title": "Latvia",
+                "title": "Łotwa",
                 "valueField": "latvia"
             },
             {
-                "balloonText": "[[title]] in [[category]]:[[value]]",
+                "balloonText": "[[title]] w[[category]]:[[value]]",
                 "bullet": "round",
                 "bulletSize": 10,
                 "id": "AmGraph-5",
