@@ -1,8 +1,7 @@
 /**
  * Created by Ela on 2016-06-09.
  */
-'use strict'
-
+'use strict';
 
 $(document).ready(function () {
     $.ajax({
@@ -71,6 +70,7 @@ $(document).ready(function () {
     $(".menu div").click(function () {
         $('.pages > div').hide();
         $('#' + $(this).attr('id') + "Container").show();
+        google.maps.event.trigger(MapInstance,'resize');
         $('.intro').hide();
     });
 
