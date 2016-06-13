@@ -1,8 +1,7 @@
 /**
  * Created by Ela on 2016-06-09.
  */
-'use strict'
-
+'use strict';
 
 $(document).ready(function () {
     $.ajax({
