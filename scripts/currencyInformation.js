@@ -1,8 +1,7 @@
 /**
  * Created by Ela on 2016-06-09.
  */
-'use strict'
-
+'use strict';
 
 $(document).ready(function () {
     $.ajax({
@@ -26,7 +25,7 @@ $(document).ready(function () {
     });
 
 
-    $('.pages div').hide();
+    $('.pages > div').hide();
 // Show chosen div, and hide all others
     $(".menu div").click(function () {
         $('.pages > div').hide();
