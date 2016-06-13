@@ -1,7 +1,10 @@
 'use strict';
 
-
-$(document).ready(function() {
+$(document).ready(setupMap);
+function setupMap() {
+    $('#planner').click(showMap);
+}
+function showMap() {
     var mapDiv = $('#map').get(0);
     var map = new google.maps.Map(mapDiv, {
         center: {lat: 51.540, lng: 15.546},
@@ -13,6 +16,11 @@ $(document).ready(function() {
             position: google.maps.ControlPosition.TOP
         }
     });
+    //TODO: pomyśleć nad podziałem na mniejsze funkcje
+    //init();
+    //addAutocompleteControl();
+    //addMarkerListener();
+    //addPlaceChangeListener();
 
     var input = document.getElementById('pac-input');
 
@@ -55,4 +63,4 @@ $(document).ready(function() {
             place.formatted_address);
         infowindow.open(map, marker);
     });
-});
+}
