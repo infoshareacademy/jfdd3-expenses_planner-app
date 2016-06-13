@@ -29,14 +29,23 @@ var $chart = AmCharts.makeChart("chartdiv",
         "startDuration": 1,
 
         "fontSize": 13,
-
+            
+        "dataLoader": {
+          "url": "data.json",
+          "format": "json"  
+        },
+        
         "theme": "black",
+        
         "categoryAxis": {
             "gridPosition": "start"
         },
         "trendLines": [],
         "chartCursor": [{
            "enable": true
+            
+            
+            
         }],
         "graphs": [
             {
