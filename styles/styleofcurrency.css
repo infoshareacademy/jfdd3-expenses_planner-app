@@ -1,10 +1,11 @@
 #currencyContainer{
     background-color: lightcyan;
+
 }
 
 
 .formBox{
-    margin-top: 30%;
+    margin-top: 15%;
 
 }
 
@@ -13,6 +14,8 @@
 }
 
 #currencySubmitButton{
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     margin-top: 10%;
 }
+
+

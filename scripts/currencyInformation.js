@@ -29,21 +29,29 @@ $(document).ready(function () {
 
             });
             var option = $('<option>');
-            $('#selectname').append(option.text('PLN - zloty(Polska)'));
-            $('#selectname').append(option.attr('value', 1));
-            $('#selectname').append(option.attr('label', 'PLN - zloty(Polska)'));
+            option.text('PLN - zloty(Polska)');
+            option.attr('value', 1);
+            option.attr('label', 'PLN - zloty(Polska)');
+            $('#selectname').append(option);
             exchangeRate.forEach(function (item) {
-                 option = $('<option>');
-                $('#selectname').append(option.text(item.code + item.currency));
-                $('#selectname').append(option.attr('label', item.code + " " + "-" + " " + item.currency));
-                $('#selectname').append(option.attr('value', item.mid));
+                option = $('<option>');
+                option.text(item.code + item.currency);
+                option.attr('label', item.code + " " + "-" + " " + item.currency);
+                option.attr('value', item.mid);
+                $('#selectname').append(option);
             });
+
+            option = $('<option>');
+            option.text('PLN - zloty(Polska)');
+            option.attr('value', 1);
+            option.attr('label', 'PLN - zloty(Polska)');
+            $('#selectSecondname').append(option);
             exchangeRate.forEach(function (items) {
                 option = $('<option>');
-                $('#selectSecondname').append(option.text(items.code + items.currency));
-                $('#selectSecondname').append(option.attr('label', items.code + " " + "-" + " " + items.currency));
-                $('#selectSecondname').append(option.attr('value', items.mid));
-
+                option.text(items.code + items.currency);
+                option.attr('label', items.code + " " + "-" + " " + items.currency);
+                option.attr('value', items.mid);
+                $('#selectSecondname').append(option);
             });
 
             $('#currencyResult').on('change', (function myCounting() {
@@ -80,7 +88,7 @@ $(document).ready(function () {
     $(".menu div").click(function () {
         $('.pages > div').hide();
         $('#' + $(this).attr('id') + "Container").show();
-        google.maps.event.trigger(MapInstance,'resize');
+        google.maps.event.trigger(MapInstance, 'resize');
         $('.intro').hide();
     });
 

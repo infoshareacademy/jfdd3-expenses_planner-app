@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" ng-app="expensePlaner">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,12 +22,10 @@
             </div>
         </div>
         <div class="header col-xs-12" id="currencyContainer">
-            <div id="calculatorform" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div id="calculatorform" class="  col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="formBox col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
                     <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
                     <br>
-
-
                     <form>
                         <fieldset class="form-group">
                             <label for="quantity">Kwota</label>
@@ -35,7 +33,8 @@
 
                             <div class="col-xs-10 col-sm-10 col-md-10">
                                 <input type="text" class="form-control" id="quantity"
-                                       placeholder="Example input">
+                                       placeholder="Example input"
+                                        ng-model="quantity">
                             </div>
                         </fieldset>
 
@@ -45,7 +44,8 @@
 
                             <div class="col-xs-10 col-sm-10 col-md-10">
                                 <select type="text" class="form-control selectpicker" id="selectname"
-                                        placeholder="symbol-waluta">
+                                        placeholder="symbol-waluta"
+                                        ng-model="selectname">
                                 </select>
                             </div>
                         </fieldset>
@@ -55,14 +55,14 @@
 
                             <div class="col-xs-10 col-sm-10 col-md-10">
                                 <select type="text" class="form-control" id="selectSecondname"
-                                        placeholder="Example input">
-
+                                        placeholder="Example input"
+                                        ng-model="selectSecondname">
                                 </select>
 
                             </div>
                             <button id="currencySubmitButton" type="submit"
-                                          class=" col-xs-4 col-xs-offset-3 btn btn-primary">Przelicz
-                        </button>
+                                    class=" col-xs-4 col-xs-offset-3 btn btn-primary">Przelicz
+                            </button>
                         </fieldset>
 
 
@@ -72,19 +72,19 @@
                     <thead>
                     <tr>
                         <th>Kwota</th>
-                        <th>wartosc</th>
+                        <th>{{quantity}}</th>
 
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td>Przelicznik</td>
-                        <td>wartosc</td>
+                        <td>{{selectname/selectSecondname}}</td>
 
                     </tr>
                     <tr>
                         <td>Kwota</td>
-                        <td>wartosc</td>
+                        <td>{{quantity *selectname/selectSecondname}}</td>
 
                     </tr>
                     </tbody>
@@ -128,6 +128,7 @@
 <script type="text/javascript" src="scripts/planner.js"></script>
 <script type="text/javascript" src="scripts/currencyInformation.js"></script>
 <script type="text/javascript" src="scripts/salary.js"></script>
+<script type="text/javascript" src="scripts/app.currencyfunction.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=showMap"></script>
 
