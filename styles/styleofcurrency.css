@@ -2,16 +2,9 @@
     background-color: lightcyan;
 }
 
-#currencyContainer td {
-    height: 10px;
-    width: 200px;
-    border: 1px solid black;
-    background-color: #4cae4c;
-    text-align: center;
-}
 
-.wynikRownania {
-    background-color: #4cae4c;
-}
+.formBox{
+    margin-top: 30%;
 
+}
 

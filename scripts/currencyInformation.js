@@ -10,11 +10,11 @@ $(document).ready(function () {
         dataType: 'json',
         success: function (data) {
             var exchangeRate = data[0].rates;
-            var table = $('<table>');
+            var table = $('<table class="table table-hover">');
             var row = $('<tr>');
-            row.append($('<td>').text("Symbol"));
-            row.append($('<td>').text("Nazwa waluty"));
-            row.append($('<td>').text("Kurs"));
+            row.append($('<td class="success">').text("Symbol"));
+            row.append($('<td class="warning">').text("Nazwa waluty"));
+            row.append($('<td class="danger">').text("Kurs"));
             table.append(row);
             $('#currencytable').append(table);
 
