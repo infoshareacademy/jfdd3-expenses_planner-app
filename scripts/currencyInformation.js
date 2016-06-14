@@ -28,15 +28,18 @@ $(document).ready(function () {
                 $('#currencytable').append(table);
 
             });
-
+            var option = $('<option>');
+            $('#selectname').append(option.text('PLN - zloty(Polska)'));
+            $('#selectname').append(option.attr('value', 1));
+            $('#selectname').append(option.attr('label', 'PLN - zloty(Polska)'));
             exchangeRate.forEach(function (item) {
-                var option = $('<option>');
+                 option = $('<option>');
                 $('#selectname').append(option.text(item.code + item.currency));
                 $('#selectname').append(option.attr('label', item.code + " " + "-" + " " + item.currency));
                 $('#selectname').append(option.attr('value', item.mid));
             });
             exchangeRate.forEach(function (items) {
-                var option = $('<option>');
+                option = $('<option>');
                 $('#selectSecondname').append(option.text(items.code + items.currency));
                 $('#selectSecondname').append(option.attr('label', items.code + " " + "-" + " " + items.currency));
                 $('#selectSecondname').append(option.attr('value', items.mid));
