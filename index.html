@@ -21,7 +21,51 @@
                         <div class="sidebar"></div>
                     </div>
                 </div>
-                <div class="header col-xs-12" id="currencyContainer"></div>
+                <div class="header col-xs-12" id="currencyContainer">
+                    <div id="calculatorform" class="col-sm-6">
+                        <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
+                        <br>
+
+
+                        <form>
+                            <fieldset class="form-group">
+                                <label for="quantity">Kwota</label>
+                                <br>
+
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="quantity"
+                                           placeholder="Example input">
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <label for="selectname">Przelicz z </label>
+                                <br>
+
+                                <div class="col-sm-5">
+                                    <select type="text" class="form-control selectpicker" id="selectname"
+                                            placeholder="symbol-waluta">
+                                    </select>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <label for="selectSecondname">Przelicz na</label>
+                                <br>
+
+                                <div class="col-sm-5">
+                                    <select type="text" class="form-control" id="selectSecondname"
+                                            placeholder="Example input">
+                                    </select>
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <span id="currencyResult">xcvhgjfhkjhg</span>
+                        </form>
+                    </div>
+                    <div id="currencytable" class="col-sm-6">
+                        KURS WALUT
+                    </div>
+                </div>
                 <div class="header col-xs-12" id="salaryContainer">
 
                 </div>
@@ -36,6 +80,8 @@
         </main>
         <script type="text/javascript" src="scripts/libs/jquery-2.2.3.min.js" ></script>
         <script type="text/javascript" src="scripts/libs/bootstrap.js"></script>
+        <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
+
 
 
         <script type="text/javascript" src="scripts/planner.js"></script>
