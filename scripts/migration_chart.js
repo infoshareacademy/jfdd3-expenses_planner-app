@@ -3,18 +3,19 @@
 AmCharts.ready(function(migration) {
 
     var chart = new AmCharts.AmSerialChart();
+
     chart.dataProvider = $chart;
     chart.categoryField = "category";
-   var graph = new AmCharts.AmGraph();
+
+    var graph = new AmCharts.AmGraph();
     graph.valueField = "poland";
     graph.type = "column";
     chart.addGraph(graph);
-
     chart.write('chartdiv');
 
 
-});
 
+});
 
 var $chart = AmCharts.makeChart("chartdiv",
     {
@@ -29,24 +30,24 @@ var $chart = AmCharts.makeChart("chartdiv",
         "startDuration": 1,
 
         "fontSize": 13,
-            
+
         "dataLoader": {
-          "url": "data.json",
-          "format": "json"  
+          "url": "chart_data/migration_data.json",
+          "format": "json",
+          "async": false
         },
-        
+
         "theme": "black",
-        
+
         "categoryAxis": {
             "gridPosition": "start"
         },
         "trendLines": [],
         "chartCursor": [{
            "enable": true
-            
-            
-            
         }],
+
+
         "graphs": [
             {
                 "balloonText": "[[title]] w [[category]]:[[value]]",
@@ -121,7 +122,7 @@ var $chart = AmCharts.makeChart("chartdiv",
                 "text": "Wykres migracji dla krajów Bałtyckich i Europy Środkowej"
             }
         ],
-        "dataProvider": [
+        "dataProvider":[
             {
                 "category": "1995",
                 "poland": -18224,
