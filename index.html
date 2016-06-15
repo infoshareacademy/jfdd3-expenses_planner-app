@@ -24,13 +24,12 @@
         <div class="header col-xs-12" id="currencyContainer">
             <div id="calculatorform" class="  col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="formBox col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
-
-
+                    <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
+                    <br>
                     <form>
                         <fieldset class="form-group">
                             <label for="quantity">Kwota</label>
-<br>
-
+                            <br>
 
                             <div class="col-xs-10 col-sm-10 col-md-10">
                                 <input type="text" class="form-control" id="quantity"
@@ -61,9 +60,9 @@
                                 </select>
 
                             </div>
-                            <button id="currencySubmitButton" type="submit"
-                                    class=" col-xs-4 col-xs-offset-3 btn btn-primary">Przelicz
-                            </button>
+                            <!--<button id="currencySubmitButton" type="submit"-->
+                                    <!--class=" col-xs-4 col-xs-offset-3 btn btn-primary">Przelicz-->
+                            <!--</button>-->
                         </fieldset>
 
 
@@ -80,19 +79,18 @@
                     <tbody>
                     <tr>
                         <td>Przelicznik</td>
-                        <td>{{selectname/selectSecondname}}</td>
+                        <td>{{selectname/selectSecondname | number |currency}}</td>
 
                     </tr>
                     <tr>
                         <td>Kwota</td>
-                        <td>{{quantity *selectname/selectSecondname | number : 2 }}</td>
+                        <td>{{quantity *selectname/selectSecondname | number}}</td>
 
                     </tr>
                     </tbody>
                 </table>
             </div>
-            <div id="currencytable" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                KURS WALUT
+            <div id="currencytable" class="hidden-xs hidden-sm col-md-6 col-lg-6">
             </div>
         </div>
         <div class="header col-xs-12" id="salaryContainer">

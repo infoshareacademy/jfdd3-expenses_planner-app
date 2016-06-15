@@ -18,17 +18,32 @@ $(document).ready(function () {
             table.append(row);
             $('#currencytable').append(table);
 
-           var reduceList = exchangeRate.slice(0,16);
-                reduceList.forEach(function (value) {
-                row = $('<tr>');
-                row.append($('<td>').text(value.code));
-                row.append($('<td>').text(value.currency));
-                row.append($('<td>').text(value.mid));
-                table.append(row);
-               return $('#currencytable').append(table);
+            var money = [{code: 'USD'}, {code: 'EUR'}, {code: 'CAD'},
+                {code: 'CHF'}, {code: 'JPY'}, {code: 'TRY'}, {code: 'SEK'},
+                {code: 'GBP'}, {code: 'CZK'}, {code: 'DKK'}];
 
+            exchangeRate.forEach(function (value) {
+                money.forEach(function(cur){
+                    console.log(value.code, cur.code);
+                    if(value.code === cur.code){
+                        row = $('<tr>');
+                        row.append($('<td>').text(value.code));
+                        row.append($('<td>').text(value.currency));
+                        row.append($('<td>').text(value.mid));
+                        table.append(row);
+                    }
+                })
             });
+            $('#currencytable').append(table);
+            // exchangeRate.slice(0,10).forEach(function (value) {
+            //     row = $('<tr>');
+            //     row.append($('<td>').text(value.code));
+            //     row.append($('<td>').text(value.currency));
+            //     row.append($('<td>').text(value.mid));
+            //     table.append(row);
+            //     $('#currencytable').append(table);
 
+            // });
             var option = $('<option>');
             option.text('PLN - zloty(Polska)');
             option.attr('value', 1);
@@ -54,8 +69,6 @@ $(document).ready(function () {
                 option.attr('value', items.mid);
                 $('#selectSecondname').append(option);
             });
-
-
 
             $('#currencyResult').on('change', (function myCounting() {
                 var score = parseFloat($('#quantity').val()) * parseFloat($('#selectname').val()) * parseFloat($('#selectSecondname').val());

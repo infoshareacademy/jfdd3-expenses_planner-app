@@ -1,22 +1,20 @@
 #currencyContainer{
     background-color: lightcyan;
-
 }
 
 
 .formBox{
-    margin-top: 20%;
+    margin-top: 10%;
 
 }
 
 #currencytable{
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
-#currencySubmitButton{
-    margin-bottom: 5%;
-    margin-top: 10%;
-}
-
+/*#currencySubmitButton{*/
+    /*margin-bottom: 5%;*/
+    /*margin-top: 10%;*/
+/*}*/
 
 
