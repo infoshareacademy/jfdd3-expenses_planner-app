@@ -29,6 +29,7 @@
                     <form>
                         <fieldset class="form-group">
                             <label for="quantity">Kwota</label>
+<br>
 
 
                             <div class="col-xs-10 col-sm-10 col-md-10">
@@ -84,7 +85,7 @@
                     </tr>
                     <tr>
                         <td>Kwota</td>
-                        <td>{{quantity *selectname/selectSecondname}}</td>
+                        <td>{{quantity *selectname/selectSecondname | number : 2 }}</td>
 
                     </tr>
                     </tbody>

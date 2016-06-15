@@ -18,16 +18,17 @@ $(document).ready(function () {
             table.append(row);
             $('#currencytable').append(table);
 
-
-            exchangeRate.forEach(function (value) {
+           var reduceList = exchangeRate.slice(0,16);
+                reduceList.forEach(function (value) {
                 row = $('<tr>');
                 row.append($('<td>').text(value.code));
                 row.append($('<td>').text(value.currency));
                 row.append($('<td>').text(value.mid));
                 table.append(row);
-                $('#currencytable').append(table);
+               return $('#currencytable').append(table);
 
             });
+
             var option = $('<option>');
             option.text('PLN - zloty(Polska)');
             option.attr('value', 1);
@@ -53,6 +54,8 @@ $(document).ready(function () {
                 option.attr('value', items.mid);
                 $('#selectSecondname').append(option);
             });
+
+
 
             $('#currencyResult').on('change', (function myCounting() {
                 var score = parseFloat($('#quantity').val()) * parseFloat($('#selectname').val()) * parseFloat($('#selectSecondname').val());
