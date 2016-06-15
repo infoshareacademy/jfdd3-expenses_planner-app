@@ -12,9 +12,9 @@ $(document).ready(function () {
             var exchangeRate = data[0].rates;
             var table = $('<table class="table table-hover">');
             var row = $('<tr>');
-            row.append($('<td class="success">').text("Symbol"));
-            row.append($('<td class="warning">').text("Nazwa waluty"));
-            row.append($('<td class="danger">').text("Kurs"));
+            row.append($('<td class="bg-primary">').text("Symbol"));
+            row.append($('<td class="bg-primary">').text("Nazwa waluty"));
+            row.append($('<td class="bg-primary">').text("Kurs"));
             table.append(row);
             $('#currencytable').append(table);
 
@@ -26,7 +26,7 @@ $(document).ready(function () {
                 money.forEach(function(cur){
                     console.log(value.code, cur.code);
                     if(value.code === cur.code){
-                        row = $('<tr>');
+                        row = $('<tr class="info">');
                         row.append($('<td>').text(value.code));
                         row.append($('<td>').text(value.currency));
                         row.append($('<td>').text(value.mid));
@@ -46,6 +46,7 @@ $(document).ready(function () {
             // });
             var option = $('<option>');
             option.text('PLN - zloty(Polska)');
+            option.attr('selected', 'selected');
             option.attr('value', 1);
             option.attr('label', 'PLN - zloty(Polska)');
             $('#selectname').append(option);
@@ -59,6 +60,7 @@ $(document).ready(function () {
 
             option = $('<option>');
             option.text('PLN - zloty(Polska)');
+            option.attr('selected', 'selected');
             option.attr('value', 1);
             option.attr('label', 'PLN - zloty(Polska)');
             $('#selectSecondname').append(option);
