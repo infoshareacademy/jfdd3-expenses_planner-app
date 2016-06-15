@@ -23,9 +23,9 @@ $(document).ready(function () {
                 {code: 'GBP'}, {code: 'CZK'}, {code: 'DKK'}];
 
             exchangeRate.forEach(function (value) {
-                money.forEach(function(cur){
+                money.forEach(function (cur) {
                     console.log(value.code, cur.code);
-                    if(value.code === cur.code){
+                    if (value.code === cur.code) {
                         row = $('<tr class="info">');
                         row.append($('<td>').text(value.code));
                         row.append($('<td>').text(value.currency));
@@ -35,15 +35,8 @@ $(document).ready(function () {
                 })
             });
             $('#currencytable').append(table);
-            // exchangeRate.slice(0,10).forEach(function (value) {
-            //     row = $('<tr>');
-            //     row.append($('<td>').text(value.code));
-            //     row.append($('<td>').text(value.currency));
-            //     row.append($('<td>').text(value.mid));
-            //     table.append(row);
-            //     $('#currencytable').append(table);
 
-            // });
+
             var option = $('<option>');
             option.text('PLN - zloty(Polska)');
             option.attr('selected', 'selected');
@@ -82,20 +75,6 @@ $(document).ready(function () {
                 }
 
             } ));
-            // $('#currencyContainer').append(table);
-            // $('table').hide();
-            // $('#value2').click(function () {
-            //     $('table').show()
-
-            // });
-            // $('#currencyContainer').append($('<div class="calculatorTitle  col-sm-12">'));
-            // $('.calculatorTitle').text('Kalkulator walutowy');
-
-
-            // exchangeRate.forEach(function(value){
-            //
-            // })
-
 
         }
     });
@@ -109,21 +88,6 @@ $(document).ready(function () {
         google.maps.event.trigger(MapInstance, 'resize');
         $('.intro').hide();
     });
-
-
-    // $('#currencyContainer').append($('<input id="value1" class="valuePlace">'));
-    // $('#currencyContainer').append($('<input id="value2" class="valuePlace">'));
-    // $('#currencyContainer').append($('<span id="valueScore">'));
-    //
-    // $('.valuePlace').on('change', (function myCounting() {
-    //     var score = parseFloat($('#value1').val()) * parseFloat($('#value2').val());
-    //     if (isNaN(score)) {
-    //         $('#valueScore').text();
-    //     }
-    //     else {
-    //         $('#valueScore').text(score);
-    //     }
-    // }));
 
 
 });
