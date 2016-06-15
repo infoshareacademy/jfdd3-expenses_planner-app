@@ -11,7 +11,7 @@ var locationData = [];
 function showMap() {
     var mapDiv = $('#map').get(0);
     var map = new google.maps.Map(mapDiv, {
-        center: {lat: 51.540, lng: 15.546},
+        center: {lat: 50.05, lng: 14.25},
         zoom: 5,
         mapTypeControl: true,
         mapTypeControlOptions:
@@ -26,7 +26,6 @@ function showMap() {
     //addAutocompleteControl();
     //addMarkerListener();
     //addPlaceChangeListener();
-
 
 
     var input = $('<input id="pac-input" class="controls" type="text" placeholder="Enter a location">').get(0);
@@ -74,6 +73,7 @@ function showMap() {
 
     var directionsService = new google.maps.DirectionsService();
     var directionsDisplay = new google.maps.DirectionsRenderer();
+    var service = new google.maps.DistanceMatrixService();
     directionsDisplay.setMap(map);
     function calcRoute() {
         console.log(locationData);
@@ -82,12 +82,13 @@ function showMap() {
         var request = {
             origin:start,
             destination:end,
-            //waypoints: locationData.map(function (item) {
-            //    return {
-            //        location: {lat: item.geometry.location.lat(), lng: item.geometry.location.lng() },
-            //        stopover: true
-            //    };
-            //}),
+
+            waypoints: locationData.slice(1, locationData.length - 1).map(function (item) {
+                return {
+                    location: item.name,
+                    stopover: true
+                };
+            }),
             travelMode: google.maps.TravelMode.DRIVING
         };
         directionsService.route(request, function(result, status) {
@@ -97,6 +98,30 @@ function showMap() {
         });
     }
 
+    function getDistance() {
+        var distance = [];
+        service.getDistanceMatrix(
+            {
+                origins: [locationData[0].formatted_address],
+                destinations: [locationData[length-1].formated_address],
+                travelMode: google.maps.TravelMode.DRIVING,
+                unitSystem: google.maps.UnitSystem.METRIC,
+                avoidHighways: false,
+                avoidTolls: false
+            }, function(response, status) {
+                if (status !== google.maps.DistanceMatrixStatus.OK) {
+                    alert('Error was: ' + status);
+                } else {
+                    console.log(response);
+                }
+            });
+        var distanceToDisplay = function (){
+            distance.reduce(prev, next) {
+                return prev + next;
+            }
+        }
+    }
+
     $('#addToRoute').off('click').on('click', function() {
         var $nowyCel = $('<a>').addClass('list-group-item');
         locationData.push(currentPlace);
@@ -104,6 +129,7 @@ function showMap() {
         $nowyCel.text(currentPlace.name);
         console.log($nowyCel);
         $('.route').append($nowyCel);
+        getDistance();
     })
 
 }
