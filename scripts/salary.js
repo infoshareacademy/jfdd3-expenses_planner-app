@@ -17,16 +17,14 @@ function initMap() {
             position: google.maps.ControlPosition.TOP
         }
     });
-    var iconBase = 'https://maps.google.com/mapfiles/kml/pal2/';
     var lastInfowindow;
 
     countries = countries.map(addMarker);
-
     function addMarker(country) {
         country.marker = new google.maps.Marker({
             position: country.capitalPosition,
             map: map,
-            icon: iconBase + 'icon58.png',
+
             animation: google.maps.Animation.DROP
         });
         country.marker.addListener('click', function() {
