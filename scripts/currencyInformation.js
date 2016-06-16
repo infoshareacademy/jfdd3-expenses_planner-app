@@ -10,37 +10,58 @@ $(document).ready(function () {
         dataType: 'json',
         success: function (data) {
             var exchangeRate = data[0].rates;
-            var table = $('<table>');
+            var table = $('<table class="table table-hover">');
             var row = $('<tr>');
-            row.append($('<td>').text("Symbol"));
-            row.append($('<td>').text("Nazwa waluty"));
-            row.append($('<td>').text("Kurs"));
+            row.append($('<td class="bg-primary">').text("Symbol"));
+            row.append($('<td class="bg-primary">').text("Nazwa waluty"));
+            row.append($('<td class="bg-primary">').text("Kurs"));
             table.append(row);
             $('#currencytable').append(table);
 
+            var money = [{code: 'USD'}, {code: 'EUR'}, {code: 'CAD'},
+                {code: 'CHF'}, {code: 'JPY'}, {code: 'TRY'}, {code: 'SEK'},
+                {code: 'GBP'}, {code: 'CZK'}, {code: 'DKK'}];
 
             exchangeRate.forEach(function (value) {
-                row = $('<tr>');
-                row.append($('<td>').text(value.code));
-                row.append($('<td>').text(value.currency));
-                row.append($('<td>').text(value.mid));
-                table.append(row);
-                $('#currencytable').append(table);
-
+                money.forEach(function (cur) {
+                    if (value.code === cur.code) {
+                        row = $('<tr class="info">');
+                        row.append($('<td>').text(value.code));
+                        row.append($('<td>').text(value.currency));
+                        row.append($('<td>').text(value.mid));
+                        table.append(row);
+                    }
+                })
             });
+            $('#currencytable').append(table);
 
+
+            var option = $('<option>');
+            option.text('PLN - zloty(Polska)');
+            option.attr('selected', 'selected');
+            option.attr('value', 1);
+            option.attr('label', 'PLN - zloty(Polska)');
+            $('#selectname').append(option);
             exchangeRate.forEach(function (item) {
-                var option = $('<option>');
-                $('#selectname').append(option.text(item.code + item.currency));
-                $('#selectname').append(option.attr('label', item.code + " " + "-" + " " + item.currency));
-                $('#selectname').append(option.attr('value', item.mid));
+                option = $('<option>');
+                option.text(item.code + item.currency);
+                option.attr('label', item.code + " " + "-" + " " + item.currency);
+                option.attr('value', item.mid);
+                $('#selectname').append(option);
             });
-            exchangeRate.forEach(function (items) {
-                var option = $('<option>');
-                $('#selectSecondname').append(option.text(items.code + items.currency));
-                $('#selectSecondname').append(option.attr('label', items.code + " " + "-" + " " + items.currency));
-                $('#selectSecondname').append(option.attr('value', items.mid));
 
+            option = $('<option>');
+            option.text('PLN - zloty(Polska)');
+            option.attr('selected', 'selected');
+            option.attr('value', 1);
+            option.attr('label', 'PLN - zloty(Polska)');
+            $('#selectSecondname').append(option);
+            exchangeRate.forEach(function (items) {
+                option = $('<option>');
+                option.text(items.code + items.currency);
+                option.attr('label', items.code + " " + "-" + " " + items.currency);
+                option.attr('value', items.mid);
+                $('#selectSecondname').append(option);
             });
 
             $('#currencyResult').on('change', (function myCounting() {
@@ -53,54 +74,19 @@ $(document).ready(function () {
                 }
 
             } ));
-            // $('#currencyContainer').append(table);
-            // $('table').hide();
-            // $('#value2').click(function () {
-            //     $('table').show()
-
-            // });
-            // $('#currencyContainer').append($('<div class="calculatorTitle  col-sm-12">'));
-            // $('.calculatorTitle').text('Kalkulator walutowy');
-
-
-            // exchangeRate.forEach(function(value){
-            //
-            // })
-
 
         }
     });
 
 
-//    $('.pages > div').hide();
-//// Show chosen div, and hide all others
-//    $(".menu div").click(function () {
-//        $('.pages > div').hide();
-//        $('.menu > div').css({"background-color": "white"});
-//        $('#' + $(this).attr('id') + "Container").show().css({"height":"90vh"}).addClass('animation');;
-//        $('#' + $(this).attr('id')).css({"background-color": "red"});
-//        $(".menu").css({"height":"10vh"});
-//        $(".floatflex").css({"align-self": "center", "padding":"0", "padding-left": "5vw"});
-//        $("#planner, #currency, #salary, #migration").css({"background-size": "5vh", "background-position": "left 8vh center"});
-//        google.maps.event.trigger(MapInstance,'resize');
-//        $('.intro').hide();
-//    });
-
-
-    // $('#currencyContainer').append($('<input id="value1" class="valuePlace">'));
-    // $('#currencyContainer').append($('<input id="value2" class="valuePlace">'));
-    // $('#currencyContainer').append($('<span id="valueScore">'));
-    //
-    // $('.valuePlace').on('change', (function myCounting() {
-    //     var score = parseFloat($('#value1').val()) * parseFloat($('#value2').val());
-    //     if (isNaN(score)) {
-    //         $('#valueScore').text();
-    //     }
-    //     else {
-    //         $('#valueScore').text(score);
-    //     }
-    // }));
+    $('.pages > div').hide();
+// Show chosen div, and hide all others
+    $(".menu div").click(function () {
+        $('.pages > div').hide();
+        $('#' + $(this).attr('id') + "Container").show();
+        google.maps.event.trigger(MapInstance, 'resize');
+        $('.intro').hide();
+    });
 
 
 });
-
