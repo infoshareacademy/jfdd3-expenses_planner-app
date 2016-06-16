@@ -1,100 +1,133 @@
 <!DOCTYPE html>
-<html lang="pl">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel = "stylesheet" type = "text/css" href = "styles/reset.css">
-        <link rel = "stylesheet" type = "text/css" href = "styles/bootstrap/bootstrap.css">
-        <link rel = "stylesheet" type = "text/css" href = "styles/main.css">
-        <link rel = "stylesheet" type = "text/css" href = "styles/styleofcurrency.css">
+<html lang="pl" ng-app="expensePlaner">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/styleofcurrency.css">
 
-        <title>Title</title>
-    </head>
-    <body>
-        <main class="wrapper">
-            <div class="logo_main col-xs-2"></div>
-            <div class="header col-xs-12 intro"></div>
-            <div class="pages">
-                <div class="header col-xs-12" id="plannerContainer">
-                    <div id="planner_page">
-                        <div id="map"></div>
-                        <div class="sidebar"></div>
-                    </div>
-                </div>
-                <div class="header col-xs-12" id="currencyContainer">
-                    <div id="calculatorform" class="col-sm-6">
-                        <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
-                        <br>
-
-
-                        <form>
-                            <fieldset class="form-group">
-                                <label for="quantity">Kwota</label>
-                                <br>
-
-                                <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="quantity"
-                                           placeholder="Example input">
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="form-group">
-                                <label for="selectname">Przelicz z </label>
-                                <br>
-
-                                <div class="col-sm-5">
-                                    <select type="text" class="form-control selectpicker" id="selectname"
-                                            placeholder="symbol-waluta">
-                                    </select>
-                                </div>
-                            </fieldset>
-                            <fieldset class="form-group">
-                                <label for="selectSecondname">Przelicz na</label>
-                                <br>
-
-                                <div class="col-sm-5">
-                                    <select type="text" class="form-control" id="selectSecondname"
-                                            placeholder="Example input">
-                                    </select>
-                                </div>
-                            </fieldset>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <span id="currencyResult">xcvhgjfhkjhg</span>
-                        </form>
-                    </div>
-                    <div id="currencytable" class="col-sm-6">
-                        KURS WALUT
-                    </div>
-                </div>
-                <div class="header col-xs-12" id="salaryContainer">
-
-                </div>
-                <div class="header col-xs-12" id="migrationContainer"><div id="chartdiv"></div></div>
+    <title>Title</title>
+</head>
+<body>
+<main class="wrapper">
+    <div class="logo_main col-xs-2"></div>
+    <div class="header col-xs-12 intro"></div>
+    <div class="pages">
+        <div class="header col-xs-12" id="plannerContainer">
+            <div id="planner_page">
+                <div id="map"></div>
+                <div class="sidebar"></div>
             </div>
-            <div class="menu col-xs-12">
-                <a href="#" ><div id="planner" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">PLANOWANIE TRASY</p></div></a>
-                <a href="#"><div id="currency" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">KURSY WALUT</p></div></a>
-                <a href="#" ><div id="salary" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">WYNAGRODZENIE</p></div></a>
-                <a href="#" ><div id="migration" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">WYKRES MIGRACJI</p></div></a>
+        </div>
+        <div class="header col-xs-12" id="currencyContainer">
+            <div id="calculatorform" class="  col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="formBox col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
+                    <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
+                    <br>
+                    <form>
+                        <fieldset class="form-group">
+                            <label for="quantity">Kwota</label>
+                            <br>
+
+                            <div class="col-xs-10 col-sm-10 col-md-10">
+                                <input type="text" class="form-control" id="quantity"
+                                       placeholder=" np. 15"
+                                        ng-model="quantity">
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label for="selectname">Przelicz z </label>
+                            <br>
+
+                            <div class="col-xs-10 col-sm-10 col-md-10">
+                                <select type="text" class="form-control selectpicker" id="selectname"
+                                        ng-model="selectname">
+                                </select>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="selectSecondname">Przelicz na</label>
+                            <br>
+
+                            <div class="col-xs-10 col-sm-10 col-md-10">
+                                <select type="text" class="form-control" id="selectSecondname"
+                                        ng-model="selectSecondname">
+                                </select>
+                            </div>
+                        </fieldset>
+
+
+                    </form>
+                </div>
+                <table id="currencyResult" class="table table-bordered">
+                    <thead>
+                    <tr class="bg-primary">
+                        <th style="font-weight: bold; color: white">Kwota</th>
+                        <th>{{quantity}}</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="alert-info">
+                        <td style="font-weight: bold; color: black">Przelicznik</td>
+                        <td>{{selectname/selectSecondname | number}}</td>
+
+                    </tr>
+                    <tr class="bg-primary">
+                        <td style="font-weight: bold; color: white">Kwota</td>
+                        <td>{{quantity *selectname/selectSecondname | number:2}}</td>
+
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-        </main>
-        <script type="text/javascript" src="scripts/libs/jquery-2.2.3.min.js" ></script>
-        <script type="text/javascript" src="scripts/libs/bootstrap.js"></script>
-        <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
+            <div id="currencytable" class="hidden-xs hidden-sm col-md-6 col-lg-6">
+            </div>
+        </div>
+        <div class="header col-xs-12" id="salaryContainer">
+
+        </div>
+        <div class="header col-xs-12" id="migrationContainer">
+            <div id="chartdiv"></div>
+        </div>
+    </div>
+    <div class="menu col-xs-12">
+        <a href="#">
+            <div id="planner" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">PLANOWANIE
+                TRASY</p></div>
+        </a>
+        <a href="#">
+            <div id="currency" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">KURSY WALUT</p>
+            </div>
+        </a>
+        <a href="#">
+            <div id="salary" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">WYNAGRODZENIE</p>
+            </div>
+        </a>
+        <a href="#">
+            <div id="migration" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">WYKRES
+                MIGRACJI</p></div>
+        </a>
+    </div>
+</main>
+<script type="text/javascript" src="scripts/libs/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="scripts/libs/bootstrap.js"></script>
+<script type="text/javascript" src="scripts/libs/angular.min.js"></script>
 
 
+<script type="text/javascript" src="scripts/planner.js"></script>
+<script type="text/javascript" src="scripts/currencyInformation.js"></script>
+<script type="text/javascript" src="scripts/salary.js"></script>
+<script type="text/javascript" src="scripts/app.currencyfunction.js"></script>
 
-        <script type="text/javascript" src="scripts/planner.js"></script>
-        <script type="text/javascript" src="scripts/currencyInformation.js"></script>
-        <script type="text/javascript" src="scripts/data.js"></script>
-        <script type="text/javascript" src="scripts/salary.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=showMap"></script>
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=showMap"></script>
-
-        <script type="text/javascript" src="scripts/amcharts_script/amcharts/amcharts.js"></script>
-        <script type="text/javascript" src="scripts/amcharts_script/amcharts/serial.js"></script>
-        <script type="text/javascript" src="scripts/amcharts_script/amcharts/themes/black.js"></script>
-        <script type="text/javascript" src="scripts/amcharts_script/amcharts/plugins/dataloader/dataloader.min.js"></script>
-        <script type="text/javascript" src="scripts/migration_chart.js"></script>
-    </body>
+<script type="text/javascript" src="scripts/amcharts_script/amcharts/amcharts.js"></script>
+<script type="text/javascript" src="scripts/amcharts_script/amcharts/serial.js"></script>
+<script type="text/javascript" src="scripts/amcharts_script/amcharts/themes/black.js"></script>
+<script src="scripts/migration_chart.js" type="text/javascript"></script>
+</body>
 </html>
