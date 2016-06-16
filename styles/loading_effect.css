@@ -1,6 +1,7 @@
 .animation {
     animation-name: animation;
-    animation-duration: 0.7s;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
 
 }
 
