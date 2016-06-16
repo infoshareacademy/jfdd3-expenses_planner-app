@@ -77,7 +77,7 @@ $(document).ready(function () {
     $(".menu div").click(function () {
         $('.pages > div').hide();
         $('.menu > div').css({"background-color": "white"});
-        $('#' + $(this).attr('id') + "Container").show().css({"height":"90vh"});
+        $('#' + $(this).attr('id') + "Container").show().css({"height":"90vh"}).addClass('animation');;
         $('#' + $(this).attr('id')).css({"background-color": "red"});
         $(".menu").css({"height":"10vh"});
         $(".floatflex").css({"align-self": "center", "padding":"0", "padding-left": "5vw"});

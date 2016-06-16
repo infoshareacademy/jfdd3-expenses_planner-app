@@ -84,6 +84,7 @@ div, main {
 }
 
 .menu {
+    position: static;
     background-color: white;
     height: 25vh;
     padding: 0 !important;
