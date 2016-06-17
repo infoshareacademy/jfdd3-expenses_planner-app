@@ -66,19 +66,20 @@ function showMap() {
         marker.setVisible(true);
 
         infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-            'Place ID: ' + place.place_id + '<br>' +
             place.formatted_address);
         infowindow.open(map, marker);
     });
 
     var directionsService = new google.maps.DirectionsService();
     var directionsDisplay = new google.maps.DirectionsRenderer();
-    //var service = new google.maps.DistanceMatrixService();
     directionsDisplay.setMap(map);
     function calcRoute() {
         console.log(locationData);
         var start = locationData[0].name;
         var end = locationData[locationData.length - 1].name;
+
+
+
         var request = {
             origin:start,
             destination:end,
@@ -97,31 +98,22 @@ function showMap() {
                 directionsDisplay.setDirections(result);
             }
         });
-    }
+        if(locationData.length>1) {
+            var routeDistance = [];
+            locationData.forEach(function (item, index) {
+                if (index < locationData.length-1) {
+                    var distance = google.maps.geometry.spherical.computeDistanceBetween (locationData[index].geometry.location, locationData[index+1].geometry.location);
+                    routeDistance.push(distance);
+                }
+            });
+            var routeDistance = routeDistance.reduce (function (prev, next) {
+                return prev + next;
+            }, 0);
+            console.log(routeDistance);
+            $('.route_text').text('Długość trasy: ' + Math.round((routeDistance / 1000)*100) / 100)
+        }
 
-    //function getDistance() {
-    //    var distance = [];
-    //    service.getDistanceMatrix(
-    //        {
-    //            origins: [locationData[0].formatted_address],
-    //            destinations: [locationData[length-1].formated_address],
-    //            travelMode: google.maps.TravelMode.DRIVING,
-    //            unitSystem: google.maps.UnitSystem.METRIC,
-    //            avoidHighways: false,
-    //            avoidTolls: false
-    //        }, function(response, status) {
-    //            if (status !== google.maps.DistanceMatrixStatus.OK) {
-    //                alert('Error was: ' + status);
-    //            } else {
-    //                console.log(response);
-    //            }
-    //        });
-    //    var distanceToDisplay = function (){
-    //        distance.reduce(prev, next) {
-    //            return prev + next;
-    //        }
-    //    }
-    //}
+    }
 
     $('#addToRoute').off('click').on('click', function() {
         if (currentPlace) {
@@ -131,8 +123,8 @@ function showMap() {
             $nowyCel.text(currentPlace.name);
             console.log($nowyCel);
             $('.route').append($nowyCel);
-            //getDistance();
         }
-    })
+
+    });
 
 }
