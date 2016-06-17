@@ -34,27 +34,27 @@
 
 /*Efekt przejazdu*/
     #planner:hover {
-        color: black;
+        color: white;
         font-weight: bolder;
         background-color: #478DFF;
 
     }
 
     #currency:hover {
-        color: black;
+        color: white;
         font-weight: bolder;
         background-color: #478DFF;
     }
 
     #salary:hover {
-        color: black;
+        color: white;
         font-weight: bolder;
         background-color: #478DFF;
 
     }
 
     #migration:hover {
-        color: black;
+        color: white;
         font-weight: bolder;
         background-color: #478DFF;
     }
@@ -62,6 +62,6 @@
 /*Aktywny przycisk    */
     .activebutton {
         background-color: #0B68FF;
-        color: black;
+        color: white;
         font-weight: bolder;
     }
