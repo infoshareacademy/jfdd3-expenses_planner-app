@@ -24,7 +24,6 @@ $(document).ready(function () {
 
             exchangeRate.forEach(function (value) {
                 money.forEach(function (cur) {
-                    console.log(value.code, cur.code);
                     if (value.code === cur.code) {
                         row = $('<tr class="info">');
                         row.append($('<td>').text(value.code));
@@ -91,4 +90,3 @@ $(document).ready(function () {
 
 
 });
-

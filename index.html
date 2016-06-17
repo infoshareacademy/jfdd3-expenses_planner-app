@@ -1,133 +1,147 @@
 <!DOCTYPE html>
-<html lang="pl" ng-app="expensePlaner">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles/reset.css">
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
-    <link rel="stylesheet" type="text/css" href="styles/styleofcurrency.css">
-
-    <title>Title</title>
-</head>
-<body>
-<main class="wrapper">
-    <div class="logo_main col-xs-2"></div>
-    <div class="header col-xs-12 intro"></div>
-    <div class="pages">
-        <div class="header col-xs-12" id="plannerContainer">
-            <div id="planner_page">
-                <div id="map"></div>
-                <div class="sidebar"></div>
-            </div>
-        </div>
-        <div class="header col-xs-12" id="currencyContainer">
-            <div id="calculatorform" class="  col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="formBox col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
-                    <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
-                    <br>
-                    <form>
-                        <fieldset class="form-group">
-                            <label for="quantity">Kwota</label>
-                            <br>
-
-                            <div class="col-xs-10 col-sm-10 col-md-10">
-                                <input type="text" class="form-control" id="quantity"
-                                       placeholder=" np. 15"
-                                        ng-model="quantity">
+<html lang="pl" ng-app="expensesPlanner">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" type = "text/css" href = "styles/reset.css">
+        <link rel = "stylesheet" type = "text/css" href = "styles/bootstrap/bootstrap.css">
+        <link rel = "stylesheet" type = "text/css" href = "styles/main.css">
+        <link rel = "stylesheet" type = "text/css" href = "styles/styleofcurrency.css">
+        <link rel = "stylesheet" type = 'text/css' href = "styles/loading_effect.css">
+        <link rel = "icon" href="images/logo_EXPNS$.png">
+        <title>Expnss PLANNER</title>
+    </head>
+    <body>
+        <main class="wrapper">
+            <a href="index.html"><div class="logo_main col-xs-2 col-md-1"></div></a>
+            <div class="header col-xs-12 intro"></div>
+            <div class="pages">
+                <div class="header col-xs-12" id="plannerContainer">
+                        <div id="map"></div>
+                        <div class="sidebar">
+                            <button id=addToRoute class="btn btn-success col-xs-10">Dodaj miejscowość do trasy</button>
+                            <div class="route list-group">
+                                <a href="#" class="list-group-item active">
+                                    TWOJA TRASA:
+                                </a>
                             </div>
-                        </fieldset>
-
-                        <fieldset class="form-group">
-                            <label for="selectname">Przelicz z </label>
-                            <br>
-
-                            <div class="col-xs-10 col-sm-10 col-md-10">
-                                <select type="text" class="form-control selectpicker" id="selectname"
-                                        ng-model="selectname">
-                                </select>
-                            </div>
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <label for="selectSecondname">Przelicz na</label>
-                            <br>
-
-                            <div class="col-xs-10 col-sm-10 col-md-10">
-                                <select type="text" class="form-control" id="selectSecondname"
-                                        ng-model="selectSecondname">
-                                </select>
-                            </div>
-                        </fieldset>
-
-
-                    </form>
+                            <span class="route_text">Długość trasy:</span>
+                        </div>
                 </div>
-                <table id="currencyResult" class="table table-bordered">
-                    <thead>
-                    <tr class="bg-primary">
-                        <th style="font-weight: bold; color: white">Kwota</th>
-                        <th>{{quantity}}</th>
+                <div class="header col-xs-12" id="currencyContainer" ng-controller="currencyExchange">
+                    <div id="calculatorform" class="  col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+                        <div class="formBox col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
+                            <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
+                            <br>
+                            <form>
+                                <fieldset class="form-group">
+                                    <label for="quantity">Kwota</label>
+                                    <br>
 
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class="alert-info">
-                        <td style="font-weight: bold; color: black">Przelicznik</td>
-                        <td>{{selectname/selectSecondname | number}}</td>
+                                    <div class="col-xs-10 col-sm-10 col-md-10">
+                                        <input type="text" class="form-control" id="quantity"
+                                               placeholder=" np. 15"
+                                               ng-model="quantity">
+                                    </div>
+                                </fieldset>
 
-                    </tr>
-                    <tr class="bg-primary">
-                        <td style="font-weight: bold; color: white">Kwota</td>
-                        <td>{{quantity *selectname/selectSecondname | number:2}}</td>
+                                <fieldset class="form-group">
+                                    <label for="selectname">Przelicz z </label>
+                                    <br>
 
-                    </tr>
-                    </tbody>
-                </table>
+                                    <div class="col-xs-10 col-sm-10 col-md-10">
+                                        <select type="text" class="form-control selectpicker" id="selectname"
+                                                ng-model="selectname">
+                                        </select>
+
+                                    </div>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label for="selectSecondname">Przelicz na</label>
+                                    <br>
+
+                                    <div class="col-xs-10 col-sm-10 col-md-10">
+                                        <select type="text" class="form-control" id="selectSecondname"
+                                                ng-model="selectSecondname">
+                                        </select>
+
+                                    </div>
+                                </fieldset>
+
+
+                            </form>
+                        </div>
+                        <table id="currencyResult" class="table table-bordered">
+                            <thead>
+                            <tr class="bg-primary">
+                                <th style="font-weight: bold; color: white">Kwota</th>
+                                <th>{{quantity}}</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="alert-info">
+                                <td style="font-weight: bold; color: black">Przelicznik</td>
+                                <td>{{selectname/selectSecondname | number}}</td>
+
+                            </tr>
+                            <tr class="bg-primary">
+                                <td style="font-weight: bold; color: white">Kwota</td>
+                                <td>{{quantity *selectname/selectSecondname | number:2}}</td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="currencytable" class="hidden-xs hidden-sm col-md-6 col-lg-6">
+                    </div>
+                </div>
+                <div class="header col-xs-12" id="salaryContainer">
+
+                </div>
+                <div class="header col-xs-12" id="migrationContainer"><div id="chartdiv"></div></div>
             </div>
-            <div id="currencytable" class="hidden-xs hidden-sm col-md-6 col-lg-6">
+            <div class="menu col-xs-12">
+                    <div id="planner" class="col-xs-12 col-sm-6 col col-md-3">
+                        <p class="height=5em floatflex">PLANOWANIE TRASY</p>
+                    </div>
+                    <div id="currency" class="col-xs-12 col-sm-6 col col-md-3">
+                        <p class="height=5em floatflex">KURSY WALUT</p>
+                    </div>
+                    <div id="salary" class="col-xs-12 col-sm-6 col col-md-3">
+                        <p class="height=5em floatflex">WYNAGRODZENIE</p>
+                    </div>
+                    <div id="migration" class="col-xs-12 col-sm-6 col col-md-3">
+                        <p class="height=5em floatflex">WYKRES MIGRACJI</p>
+                    </div>
             </div>
-        </div>
-        <div class="header col-xs-12" id="salaryContainer">
+        </main>
 
-        </div>
-        <div class="header col-xs-12" id="migrationContainer">
-            <div id="chartdiv"></div>
-        </div>
-    </div>
-    <div class="menu col-xs-12">
-        <a href="#">
-            <div id="planner" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">PLANOWANIE
-                TRASY</p></div>
-        </a>
-        <a href="#">
-            <div id="currency" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">KURSY WALUT</p>
-            </div>
-        </a>
-        <a href="#">
-            <div id="salary" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">WYNAGRODZENIE</p>
-            </div>
-        </a>
-        <a href="#">
-            <div id="migration" class="col-xs-12 col-sm-6 col col-md-3"><p class="height=5em text-center">WYKRES
-                MIGRACJI</p></div>
-        </a>
-    </div>
-</main>
-<script type="text/javascript" src="scripts/libs/jquery-2.2.3.min.js"></script>
-<script type="text/javascript" src="scripts/libs/bootstrap.js"></script>
-<script type="text/javascript" src="scripts/libs/angular.min.js"></script>
+        <!--Skrypty zewnętrzne-->
+        <script type="text/javascript" src="scripts/libs/jquery-2.2.3.min.js" ></script>
+        <script type="text/javascript" src="scripts/libs/bootstrap.js"></script>
+        <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
+
+        <!--Skrypt odpowiedzialny za działanie menu-->
+        <script type="text/javascript" src="scripts/menu.js"></script>
+
+        <script type="text/javascript" src="scripts/currencyInformation.js"></script>
+        <script type="text/javascript" src="scripts/planner.js"></script>
+        <script type="text/javascript" src="scripts/data.js"></script>
+        <script type="text/javascript" src="scripts/salary.js"></script>
+
+        <!--Skrypt Map API-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=showMap"></script>
 
 
-<script type="text/javascript" src="scripts/planner.js"></script>
-<script type="text/javascript" src="scripts/currencyInformation.js"></script>
-<script type="text/javascript" src="scripts/salary.js"></script>
-<script type="text/javascript" src="scripts/app.currencyfunction.js"></script>
+        <!--Skrypty odpowiedzialne za tworzenie wykresu-->
+        <script type="text/javascript" src="scripts/amcharts_script/amcharts/amcharts.js"></script>
+        <script type="text/javascript" src="scripts/amcharts_script/amcharts/serial.js"></script>
+        <script type="text/javascript" src="scripts/amcharts_script/amcharts/themes/black.js"></script>
+        <script type="text/javascript" src="scripts/amcharts_script/amcharts/plugins/dataloader/dataloader.min.js"></script>
+        <script type="text/javascript" src="scripts/migration_chart.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=showMap"></script>
-
-<script type="text/javascript" src="scripts/amcharts_script/amcharts/amcharts.js"></script>
-<script type="text/javascript" src="scripts/amcharts_script/amcharts/serial.js"></script>
-<script type="text/javascript" src="scripts/amcharts_script/amcharts/themes/black.js"></script>
-<script src="scripts/migration_chart.js" type="text/javascript"></script>
-</body>
+        <!--ANGULAR-->
+        <script type="text/javascript" src="app.js"></script>
+    </body>
 </html>
