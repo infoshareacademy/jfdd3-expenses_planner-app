@@ -36,7 +36,7 @@ var $chart = AmCharts.makeChart("chartdiv",
         },
         "trendLines": [],
         "chartCursor": [{
-           "enable": true
+           "selectWithoutZooming": true
         }],
         "graphs": [
             {

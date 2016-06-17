@@ -4,9 +4,9 @@ $(document).ready(function () {
 // Show chosen div, and hide all others
     $(".menu div").click(function () {
         $('.pages > div').hide();
-        $('.menu > div').removeClass('active');
+        $('.menu > div').removeClass('activebutton');
         $('#' + $(this).attr('id') + "Container").show().css({"height": "90vh"}).addClass('animation');
-        $('#' + $(this).attr('id')).addClass('active');
+        $('#' + $(this).attr('id')).addClass('activebutton');
         $(".menu").css({"height": "10vh"});
         $(".floatflex").css({"align-self": "center", "padding": "0", "padding-left": "5vw"});
         $("#planner, #currency, #salary, #migration").css({

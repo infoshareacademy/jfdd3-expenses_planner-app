@@ -24,11 +24,7 @@
     }
 
 
-/*Aktywny przycisk    */
-    .active {
-        background-color: black;
-        color: lightgrey;
-    }
+
 
 /*Zarządzanie klasa przycisku*/
     .floatflex {
@@ -38,25 +34,34 @@
 
 /*Efekt przejazdu*/
     #planner:hover {
-        color: lightgrey;
-        background-color: darkgrey;
-        border-radius: 15px;
+        color: white;
+        font-weight: bolder;
+        background-color: #478DFF;
+
     }
 
     #currency:hover {
-        color: lightgrey;
-        background-color: darkgrey;
-        border-radius: 15px;
+        color: white;
+        font-weight: bolder;
+        background-color: #478DFF;
     }
 
     #salary:hover {
-        color: lightgrey;
-        background-color: darkgrey;
-        border-radius: 15px;
+        color: white;
+        font-weight: bolder;
+        background-color: #478DFF;
+
     }
 
     #migration:hover {
-        color: lightgrey;
-        background-color: darkgrey;
-        border-radius: 15px;
+        color: white;
+        font-weight: bolder;
+        background-color: #478DFF;
+    }
+
+/*Aktywny przycisk    */
+    .activebutton {
+        background-color: #0B68FF;
+        color: white;
+        font-weight: bolder;
     }
