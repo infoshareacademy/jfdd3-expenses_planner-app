@@ -147,5 +147,6 @@
         align-content: center;
         min-width: 420px;
         max-width: 1600px;
-        height: 75vh;
+        height: 80vh;
+        padding-top: 10vh;
     }
