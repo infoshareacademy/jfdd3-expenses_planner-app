@@ -53,8 +53,7 @@
     }
 
 #plannerContainer {
-    border: 2px solid #82C4FF;
-    background-color: #82C4FF;
+    background-color: #2A3E5C;
     height: 75vh;
 }
 
@@ -140,7 +139,7 @@
 /*Wykres ustawienia CSS*/
 
     #migrationContainer {
-        background-color: black;
+        background-color: #2A3E5C;
     }
 
     #chartdiv {

@@ -1,5 +1,6 @@
 #currencyContainer {
-    background-color: #dddddd;
+    background-color: #2A3E5C;
+    color:white;
 
 
 }
@@ -11,6 +12,7 @@
 
 #currencytable {
     margin-top: 2%;
+    color:black;
 }
 
 /*#currencySubmitButton{*/
