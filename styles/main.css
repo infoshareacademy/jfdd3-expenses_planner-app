@@ -52,13 +52,11 @@
         padding: 0 !important;
     }
 
-/*Struktura CSS dla Planner*/
-
-    #plannerContainer {
-        border: 2px solid #82C4FF;
-        background-color: #82C4FF;
-        height: 75vh;
-    }
+#planner_page {
+    border: 2px solid #82C4FF;
+    background-color: #82C4FF;
+    height: 75vh;
+}
 
     #map {
         width: 80%;
@@ -89,11 +87,25 @@
         border-color: #4d90fe;
     }
 
-    .sidebar {
-        width: 20%;
-        height: 100%;
-        float: left;
-    }
+.sidebar {
+    width: 20%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.route {
+    margin: 0 auto;
+    width: 90%;
+    background-color: white;
+}
+
+.route_text {
+    color: white;
+}
 
 /*Globalne dla menu*/
 
