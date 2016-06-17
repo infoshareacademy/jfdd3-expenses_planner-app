@@ -1,0 +1,62 @@
+/*Animacja wczytywania strony*/
+    .animation {
+        animation-name: animation;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+    }
+
+    @keyframes animation {
+        0% {
+            opacity: 0;
+        }
+        25% {
+            opacity: 0.25;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        75% {
+            opacity: 0.75;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+
+/*Aktywny przycisk    */
+    .active {
+        background-color: black;
+        color: lightgrey;
+    }
+
+/*Zarządzanie klasa przycisku*/
+    .floatflex {
+        align-self: flex-end;
+        padding-bottom: 2vh;
+    }
+
+/*Efekt przejazdu*/
+    #planner:hover {
+        color: lightgrey;
+        background-color: darkgrey;
+        border-radius: 15px;
+    }
+
+    #currency:hover {
+        color: lightgrey;
+        background-color: darkgrey;
+        border-radius: 15px;
+    }
+
+    #salary:hover {
+        color: lightgrey;
+        background-color: darkgrey;
+        border-radius: 15px;
+    }
+
+    #migration:hover {
+        color: lightgrey;
+        background-color: darkgrey;
+        border-radius: 15px;
+    }
