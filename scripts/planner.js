@@ -73,7 +73,7 @@ function showMap() {
 
     var directionsService = new google.maps.DirectionsService();
     var directionsDisplay = new google.maps.DirectionsRenderer();
-    var service = new google.maps.DistanceMatrixService();
+    //var service = new google.maps.DistanceMatrixService();
     directionsDisplay.setMap(map);
     function calcRoute() {
         console.log(locationData);
@@ -93,34 +93,35 @@ function showMap() {
         };
         directionsService.route(request, function(result, status) {
             if (status == google.maps.DirectionsStatus.OK) {
+                console.log(result);
                 directionsDisplay.setDirections(result);
             }
         });
     }
 
-    function getDistance() {
-        var distance = [];
-        service.getDistanceMatrix(
-            {
-                origins: [locationData[0].formatted_address],
-                destinations: [locationData[length-1].formated_address],
-                travelMode: google.maps.TravelMode.DRIVING,
-                unitSystem: google.maps.UnitSystem.METRIC,
-                avoidHighways: false,
-                avoidTolls: false
-            }, function(response, status) {
-                if (status !== google.maps.DistanceMatrixStatus.OK) {
-                    alert('Error was: ' + status);
-                } else {
-                    console.log(response);
-                }
-            });
-        var distanceToDisplay = function (){
-            distance.reduce(prev, next) {
-                return prev + next;
-            }
-        }
-    }
+    //function getDistance() {
+    //    var distance = [];
+    //    service.getDistanceMatrix(
+    //        {
+    //            origins: [locationData[0].formatted_address],
+    //            destinations: [locationData[length-1].formated_address],
+    //            travelMode: google.maps.TravelMode.DRIVING,
+    //            unitSystem: google.maps.UnitSystem.METRIC,
+    //            avoidHighways: false,
+    //            avoidTolls: false
+    //        }, function(response, status) {
+    //            if (status !== google.maps.DistanceMatrixStatus.OK) {
+    //                alert('Error was: ' + status);
+    //            } else {
+    //                console.log(response);
+    //            }
+    //        });
+    //    var distanceToDisplay = function (){
+    //        distance.reduce(prev, next) {
+    //            return prev + next;
+    //        }
+    //    }
+    //}
 
     $('#addToRoute').off('click').on('click', function() {
         var $nowyCel = $('<a>').addClass('list-group-item');
@@ -129,7 +130,7 @@ function showMap() {
         $nowyCel.text(currentPlace.name);
         console.log($nowyCel);
         $('.route').append($nowyCel);
-        getDistance();
+        //getDistance();
     })
 
 }
