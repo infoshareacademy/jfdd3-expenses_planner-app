@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl" ng-app="expensePlaner">
+<html lang="pl" ng-app="expensesPlanner">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
                         <div class="sidebar"></div>
                     </div>
                 </div>
-                <div class="header col-xs-12" id="currencyContainer" ng-controller="travelPlaner">
+                <div class="header col-xs-12" id="currencyContainer" ng-controller="currencyExchange">
                     <div id="calculatorform" class="  col-xs-12 col-sm-12 col-md-6 col-lg-6" >
                         <div class="formBox col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
                             <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
@@ -119,6 +119,8 @@
         <script type="text/javascript" src="scripts/amcharts_script/amcharts/themes/black.js"></script>
         <script type="text/javascript" src="scripts/amcharts_script/amcharts/plugins/dataloader/dataloader.min.js"></script>
         <script type="text/javascript" src="scripts/migration_chart.js"></script>
-        <script type="text/javascript" src="scripts/app.currencyfunction.js"></script>
+
+        <!--ANGULAR-->
+        <script type="text/javascript" src="app.js"></script>
     </body>
 </html>
