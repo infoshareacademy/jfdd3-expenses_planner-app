@@ -1,19 +1,52 @@
 #currencyContainer {
-    background-color: #dddddd;
-
+background-color: #e2e2e2;
+    height: auto !important;
+    min-height: 90vh;
 
 }
+
+
 
 .formBox {
-    margin-top: 10%;
+    /*margin-top: 15%;*/
+
+}
+@media screen and (min-width:992px){
+    #currencytable {
+        margin-top: 6vh;
+
+    }
+    #calculatorform {
+        margin-top: 18vh;
+        max-width: 50vw;
+    }
+}
+
+.amount th{
+    font-weight: bold;
+    color: white;
 
 }
 
-#currencytable {
-    margin-top: 2%;
+.converter td {
+    font-weight: bold;
+    color: black;
 }
 
-/*#currencySubmitButton{*/
-/*margin-bottom: 5%;*/
-/*margin-top: 10%;*/
-/*}*/
+.result td {
+    font-weight: bold;
+    color: white;
+}
+
+.calculatorTitle {
+
+
+    font-family: "Lohit Bengali";
+    font-weight: bolder;
+    font-size: x-large;
+    padding-top:6vh;
+}
+
+fieldset{
+    min-width: 1px;
+}
