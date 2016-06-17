@@ -36,36 +36,32 @@
     #planner:hover {
         color: black;
         font-weight: bolder;
-        background-color: darkgrey;
-        border: inset 0.5vw;
+        background-color: #478DFF;
 
     }
 
     #currency:hover {
         color: black;
         font-weight: bolder;
-        background-color: darkgrey;
-        border: inset 0.5vw;
+        background-color: #478DFF;
     }
 
     #salary:hover {
         color: black;
         font-weight: bolder;
-        background-color: darkgrey;
-        border: inset 0.5vw;
+        background-color: #478DFF;
+
     }
 
     #migration:hover {
         color: black;
         font-weight: bolder;
-        background-color: darkgrey;
-        border: inset 0.5vw;
+        background-color: #478DFF;
     }
 
 /*Aktywny przycisk    */
-.activebutton {
-    background-color: grey;
-    color: lightgrey;
-    font-weight: bolder;
-    border: outset 0.5vw;
-}
+    .activebutton {
+        background-color: #0B68FF;
+        color: black;
+        font-weight: bolder;
+    }
