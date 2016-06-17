@@ -99,27 +99,36 @@ div, main {
     display: flex;
     justify-content: center;
     cursor: pointer;
+    -webkit-transition-delay: 0.1s;
+    transition-duration: 0.4s;
 }
 
 .floatflex {
     align-self: flex-end;
     padding-bottom: 2vh;
 }
-
     #planner:hover {
-        color: #2e6da4;
+        color: lightgrey;
+        background-color: darkgrey;
+        border-radius: 15px;
     }
 
     #currency:hover {
-        color: #2e6da4;
+        color: lightgrey;
+        background-color: darkgrey;
+        border-radius: 15px;
     }
 
     #salary:hover {
-        color: #2e6da4;
+        color: lightgrey;
+        background-color: darkgrey;
+        border-radius: 15px;
     }
 
     #migration:hover {
-        color: #2e6da4;
+        color: lightgrey;
+        background-color: darkgrey;
+        border-radius: 15px;
     }
 
 #currency {
