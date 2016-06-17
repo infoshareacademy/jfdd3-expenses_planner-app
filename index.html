@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl" ng-app="ExpensesPlanner">
+<html lang="pl" ng-app="expensesPlanner">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,49 +27,72 @@
                             <span class="route_text">Długość trasy:</span>
                         </div>
                 </div>
-                <div class="header col-xs-12" id="currencyContainer">
-                    <div id="calculatorform" class="col-sm-6">
-                        <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
-                        <br>
+                <div class="header col-xs-12" id="currencyContainer" ng-controller="currencyExchange">
+                    <div id="calculatorform" class="  col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+                        <div class="formBox col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
+                            <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
+                            <br>
+                            <form>
+                                <fieldset class="form-group">
+                                    <label for="quantity">Kwota</label>
+                                    <br>
+
+                                    <div class="col-xs-10 col-sm-10 col-md-10">
+                                        <input type="text" class="form-control" id="quantity"
+                                               placeholder=" np. 15"
+                                               ng-model="quantity">
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                    <label for="selectname">Przelicz z </label>
+                                    <br>
+
+                                    <div class="col-xs-10 col-sm-10 col-md-10">
+                                        <select type="text" class="form-control selectpicker" id="selectname"
+                                                ng-model="selectname">
+                                        </select>
+
+                                    </div>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label for="selectSecondname">Przelicz na</label>
+                                    <br>
+
+                                    <div class="col-xs-10 col-sm-10 col-md-10">
+                                        <select type="text" class="form-control" id="selectSecondname"
+                                                ng-model="selectSecondname">
+                                        </select>
+
+                                    </div>
+                                </fieldset>
 
 
-                        <form>
-                            <fieldset class="form-group">
-                                <label for="quantity">Kwota</label>
-                                <br>
+                            </form>
+                        </div>
+                        <table id="currencyResult" class="table table-bordered">
+                            <thead>
+                            <tr class="bg-primary">
+                                <th style="font-weight: bold; color: white">Kwota</th>
+                                <th>{{quantity}}</th>
 
-                                <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="quantity"
-                                           placeholder="Example input">
-                                </div>
-                            </fieldset>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="alert-info">
+                                <td style="font-weight: bold; color: black">Przelicznik</td>
+                                <td>{{selectname/selectSecondname | number}}</td>
 
-                            <fieldset class="form-group">
-                                <label for="selectname">Przelicz z </label>
-                                <br>
+                            </tr>
+                            <tr class="bg-primary">
+                                <td style="font-weight: bold; color: white">Kwota</td>
+                                <td>{{quantity *selectname/selectSecondname | number:2}}</td>
 
-                                <div class="col-sm-5">
-                                    <select type="text" class="form-control selectpicker" id="selectname"
-                                            placeholder="symbol-waluta">
-                                    </select>
-                                </div>
-                            </fieldset>
-                            <fieldset class="form-group">
-                                <label for="selectSecondname">Przelicz na</label>
-                                <br>
-
-                                <div class="col-sm-5">
-                                    <select type="text" class="form-control" id="selectSecondname"
-                                            placeholder="Example input">
-                                    </select>
-                                </div>
-                            </fieldset>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <span id="currencyResult">xcvhgjfhkjhg</span>
-                        </form>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div id="currencytable" class="col-sm-6">
-                        KURS WALUT
+                    <div id="currencytable" class="hidden-xs hidden-sm col-md-6 col-lg-6">
                     </div>
                 </div>
                 <div class="header col-xs-12" id="salaryContainer">
@@ -90,8 +113,9 @@
 
 
 
-        <script type="text/javascript" src="scripts/currencyInformation.js"></script>
         <script type="text/javascript" src="scripts/planner.js"></script>
+        <script type="text/javascript" src="scripts/currencyInformation.js"></script>
+        <script type="text/javascript" src="scripts/data.js"></script>
         <script type="text/javascript" src="scripts/salary.js"></script>
 
         <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=showMap"></script>
@@ -99,6 +123,10 @@
         <script type="text/javascript" src="scripts/amcharts_script/amcharts/amcharts.js"></script>
         <script type="text/javascript" src="scripts/amcharts_script/amcharts/serial.js"></script>
         <script type="text/javascript" src="scripts/amcharts_script/amcharts/themes/black.js"></script>
-        <script src="scripts/migration_chart.js" type="text/javascript"></script>
+        <script type="text/javascript" src="scripts/amcharts_script/amcharts/plugins/dataloader/dataloader.min.js"></script>
+        <script type="text/javascript" src="scripts/migration_chart.js"></script>
+
+        <!--ANGULAR-->
+        <script type="text/javascript" src="app.js"></script>
     </body>
 </html>

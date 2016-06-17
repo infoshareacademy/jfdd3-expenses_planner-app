@@ -1,17 +1,19 @@
-#currencyContainer{
-    background-color: lightcyan;
+#currencyContainer {
+    background-color: #dddddd;
+
+
 }
 
-#currencyContainer td {
-    height: 10px;
-    width: 200px;
-    border: 1px solid black;
-    background-color: #4cae4c;
-    text-align: center;
+.formBox {
+    margin-top: 10%;
+
 }
 
-.wynikRownania {
-    background-color: #4cae4c;
+#currencytable {
+    margin-top: 2%;
 }
 
-
+/*#currencySubmitButton{*/
+/*margin-bottom: 5%;*/
+/*margin-top: 10%;*/
+/*}*/
