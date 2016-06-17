@@ -124,13 +124,15 @@ function showMap() {
     //}
 
     $('#addToRoute').off('click').on('click', function() {
-        var $nowyCel = $('<a>').addClass('list-group-item');
-        locationData.push(currentPlace);
-        calcRoute();
-        $nowyCel.text(currentPlace.name);
-        console.log($nowyCel);
-        $('.route').append($nowyCel);
-        //getDistance();
+        if (currentPlace) {
+            var $nowyCel = $('<a>').addClass('list-group-item');
+            locationData.push(currentPlace);
+            calcRoute();
+            $nowyCel.text(currentPlace.name);
+            console.log($nowyCel);
+            $('.route').append($nowyCel);
+            //getDistance();
+        }
     })
 
 }
