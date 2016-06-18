@@ -19,13 +19,14 @@
                 <div class="header col-xs-12" id="plannerContainer">
                         <div id="map" class="col-md-10 col-xs-12"></div>
                         <div class="sidebar col-md-2 col-xs-12">
-                            <button id=addToRoute class="btn btn-success col-xs-10">Dodaj do trasy</button>
-                            <div class="route list-group">
-                                <a href="#" class="list-group-item active">
+                            <p class="col-xs-12 text-left">Aby dodać miejscowość do trasy, wpisz jej nazwę w polu widocznym w górnym prawym rogu mapy i kliknij przycisk "Dodaj do trasy".</p>
+                            <button id=addToRoute class="btn btn-info col-md-10 col-xs-2">Dodaj do trasy</button>
+                            <div class="route">
+                                <ul href="#" class="list-group route-list">
                                     TWOJA TRASA:
-                                </a>
+                                </ul>
                             </div>
-                            <span class="route_text"></span>
+                            <span class="distance_text"></span>
                         </div>
                 </div>
                 <div class="header col-xs-12" id="currencyContainer" ng-controller="currencyExchange">
