@@ -28,7 +28,7 @@ function showMap() {
     //addPlaceChangeListener();
 
 
-    var input = $('<input id="pac-input" class="controls" type="text" placeholder="Enter a location">').get(0);
+    var input = $('<input id="pac-input" class="controls" type="text" placeholder="Wpisz miejscowość">').get(0);
 
     var autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo('bounds', map);
@@ -117,14 +117,19 @@ function showMap() {
 
     $('#addToRoute').off('click').on('click', function() {
         if (currentPlace) {
-            var $nowyCel = $('<li>').addClass('list-group-item');
+            var $nowyCel = $('<li>').addClass('list-group-item') //.append($('<div>')).$addClass('glyphicon-remove deleteMe');
             locationData.push(currentPlace);
             calcRoute();
             $nowyCel.text(currentPlace.name);
             console.log($nowyCel);
             $('.route').append($nowyCel);
         }
-
+        $('.sortable').sortable();
     });
+
+    // $(".route-list").on("click", "button", function(e) {
+    //     e.preventDefault();
+    //     $(this).parent().remove();
+    // });
 
 }

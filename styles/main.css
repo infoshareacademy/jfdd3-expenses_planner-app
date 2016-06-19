@@ -58,11 +58,11 @@
     padding: 0;
 }
 
-@media screen and (max-width: 991px) {
-    #plannerContainer {
-        height: auto;
-    }
-}
+/*@media screen and (max-width: 991px) {*/
+    /*#plannerContainer {*/
+        /*height: 60vh;*/
+    /*}*/
+/*}*/
 
     #map {
         /*width: 80%;*/
@@ -105,32 +105,29 @@
 }
 
 .text-left {
-    color: gray;
+    color: gray; /* TODO zmienić na white jak już będzie działać rwd;*/
     border: solid white 1px;
     margin-top: 20px;
     padding: 10px;
+    font-size: 0.9em;
 }
 
 #addToRoute {
     margin: 20px auto;
 }
 
-.text-left {
-    color: white;
-    border: solid white 1px;
-    padding: 10px;
-}
-
 .route {
     margin: 20px auto;
     width: 90%;
     background-color: #f2f2f2;
+    height: 500px;
     overflow:hidden;
     overflow-y:auto;
+    border-radius: 4px;
 }
 
-.list-group-item.active {
-    border-radius: 0;
+.route-list {
+    padding-top: 5px;
 }
 
 .distance_text {

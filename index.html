@@ -19,10 +19,10 @@
                 <div class="header col-xs-12" id="plannerContainer">
                         <div id="map" class="col-md-10 col-xs-12"></div>
                         <div class="sidebar col-md-2 col-xs-12">
-                            <p class="col-xs-12 text-left">Aby dodać miejscowość do trasy, wpisz jej nazwę w polu widocznym w górnym prawym rogu mapy i kliknij przycisk "Dodaj do trasy".</p>
+                            <p class="col-xs-12 text-left">Aby dodać miejscowość do trasy, wpisz jej nazwę w polu widocznym w górnym prawym rogu mapy i wybierz ją z listy podpowiedzi, a następnie kliknij przycisk "Dodaj do trasy".</p>
                             <button id=addToRoute class="btn btn-info col-md-10 col-xs-2">Dodaj do trasy</button>
-                            <div class="route">
-                                <ul href="#" class="list-group route-list">
+                            <div class="route list-group">
+                                <ul href="#" class="route-list sortable">
                                     TWOJA TRASA:
                                 </ul>
                             </div>
@@ -125,6 +125,7 @@
         <script type="text/javascript" src="scripts/libs/jquery-2.2.3.min.js" ></script>
         <script type="text/javascript" src="scripts/libs/bootstrap.js"></script>
         <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
+        <script type="text/javascript" src="scripts/libs/jquery.sortable.min.js"></script>
 
         <!--Skrypt odpowiedzialny za działanie menu-->
         <script type="text/javascript" src="scripts/menu.js"></script>
@@ -135,7 +136,7 @@
         <script type="text/javascript" src="scripts/salary.js"></script>
 
         <!--Skrypt Map API-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9ssQAa5Ngj9jOrwC7uMjFPpZ7fJFxgVg&libraries=places&callback=showMap"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9ssQAa5Ngj9jOrwC7uMjFPpZ7fJFxgVg&libraries=places&callback=showMap&language=pl"></script>
 
 
         <!--Skrypty odpowiedzialne za tworzenie wykresu-->
