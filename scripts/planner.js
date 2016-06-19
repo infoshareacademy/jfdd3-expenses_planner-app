@@ -117,7 +117,7 @@ function showMap() {
 
     $('#addToRoute').off('click').on('click', function() {
         if (currentPlace) {
-            var $nowyCel = $('<li>').addClass('list-group-item') //.append($('<div>')).$addClass('glyphicon-remove deleteMe');
+            var $nowyCel = $('<li>').addClass('list-group-item') //.append($('<button>')).$addClass('glyphicon-remove');
             locationData.push(currentPlace);
             calcRoute();
             $nowyCel.text(currentPlace.name);
