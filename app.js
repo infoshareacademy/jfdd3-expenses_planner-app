@@ -1,4 +1,4 @@
-(function(){
+(function () {
     var app = angular.module('expensesPlanner', []);
 
     app.controller('currencyExchange', ctrl);
@@ -6,9 +6,7 @@
         $scope.selectname = 1.0;
         $scope.selectSecondname = 1.0;
         $scope.updateCurrencyName = function () {
-            $scope.currencyName = $( "#selectSecondname option:selected" ).attr('label');
-
+            $scope.currencyName = $("#selectSecondname option:selected").attr('label');
         }
     }
-
-    })();
+})();

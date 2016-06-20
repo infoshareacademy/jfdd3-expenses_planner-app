@@ -1,21 +1,21 @@
 #currencyContainer {
-background-color: #2A3E5C;
+    background-color: #2A3E5C;
     height: auto !important;
     min-height: 90vh;
 
 }
 
-
-
 .formBox {
     /*margin-top: 15%;*/
 
 }
-@media screen and (min-width:992px){
+
+@media screen and (min-width: 992px) {
     #currencytable {
         margin-top: 6vh;
 
     }
+
     #calculatorform {
         margin-top: 18vh;
         max-width: 50vw;
@@ -26,7 +26,7 @@ label {
     color: white;
 }
 
-.amount th{
+.amount th {
     font-weight: bold;
     color: white;
 
@@ -43,15 +43,13 @@ label {
 }
 
 .calculatorTitle {
-
-
     font-family: "Lohit Bengali";
     font-weight: bolder;
     font-size: x-large;
-    padding-top:6vh;
+    padding-top: 6vh;
     color: white;
 }
 
-fieldset{
+fieldset {
     min-width: 1px;
 }

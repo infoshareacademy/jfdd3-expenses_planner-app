@@ -20,9 +20,9 @@ $(document).ready(function () {
 
             var money = [{code: 'USD'}, {code: 'EUR'}, {code: 'CAD'},
                 {code: 'CHF'}, {code: 'JPY'}, {code: 'TRY'}, {code: 'SEK'},
-                {code: 'GBP'}, {code: 'CZK'}, {code: 'DKK'},{code: 'HUF'},
-                {code: 'UAH'},{code: 'ISK'},{code: 'NOK'},{code: 'HRK'},
-                {code: 'BRL'},{code: 'MXN'},{code: 'INR'},{code: 'BGN'} ];
+                {code: 'GBP'}, {code: 'CZK'}, {code: 'DKK'}, {code: 'HUF'},
+                {code: 'UAH'}, {code: 'ISK'}, {code: 'NOK'}, {code: 'HRK'},
+                {code: 'BRL'}, {code: 'MXN'}, {code: 'INR'}, {code: 'BGN'}];
 
             exchangeRate.forEach(function (value) {
                 money.forEach(function (cur) {
@@ -36,7 +36,6 @@ $(document).ready(function () {
                 })
             });
             $('#currencytable').append(table);
-
 
             var option = $('<option>');
             option.text('PLN - zloty(Polska)');
@@ -74,21 +73,18 @@ $(document).ready(function () {
                 else {
                     $('#currencyResult').text(score);
                 }
-
             } ));
-
         }
     });
-    //The way to change the main conteiners
 
+    //The way to change the main conteiners
     $('.pages > div').hide();
-// Show chosen div, and hide all others
+
+    // Show chosen div, and hide all others
     $(".menu div").click(function () {
         $('.pages > div').hide();
         $('#' + $(this).attr('id') + "Container").show();
         google.maps.event.trigger(MapInstance, 'resize');
         $('.intro').hide();
     });
-
-
 });
