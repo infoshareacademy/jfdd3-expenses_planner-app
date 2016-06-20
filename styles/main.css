@@ -103,6 +103,7 @@
     margin-top: 20px;
     padding: 10px;
     font-size: 0.9em;
+    min-height: 18vh;
 }
 
 #addToRoute {
@@ -113,9 +114,9 @@
     margin: 20px auto;
     width: 90%;
     background-color: #f2f2f2;
-    height: 500px;
-    overflow: hidden;
-    overflow-y: auto;
+    min-height: 30vh;
+    overflow:hidden;
+    overflow-y:auto;
     border-radius: 4px;
 }
 
@@ -133,7 +134,7 @@
     }
 
     #map {
-        height: 60vh;
+        height: 75vh;
     }
 
     .sidebar {
@@ -142,6 +143,10 @@
 
     .route {
         width: 60%;
+    }
+    .text-left {
+        min-height: 4vh;
+        text-align: center;
     }
 }
 
