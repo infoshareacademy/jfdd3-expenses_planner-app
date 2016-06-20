@@ -1,157 +1,163 @@
 <!DOCTYPE html>
 <html lang="pl" ng-app="expensesPlanner">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel = "stylesheet" type = "text/css" href = "styles/reset.css">
-        <link rel = "stylesheet" type = "text/css" href = "styles/bootstrap/bootstrap.css">
-        <link rel = "stylesheet" type = "text/css" href = "styles/main.css">
-        <link rel = "stylesheet" type = "text/css" href = "styles/styleofcurrency.css">
-        <link rel = "stylesheet" type = 'text/css' href = "styles/loading_effect.css">
-        <link rel = "icon" href="images/logo_EXPNS$.png">
-        <title>Expnss PLANNER</title>
-    </head>
-    <body>
-        <main class="wrapper">
-            <a href="index.html"><div class="logo_main col-xs-2 col-md-1"></div></a>
-            <div class="header col-xs-12 intro"></div>
-            <div class="pages">
-                <div class="header col-xs-12" id="plannerContainer">
-                        <div id="map" class="col-md-10 col-xs-12"></div>
-                        <div class="sidebar col-md-2 col-xs-12">
-                            <p class="col-xs-12 text-left">Aby dodać miejscowość do trasy, wpisz jej nazwę w polu widocznym w górnym prawym rogu mapy i wybierz ją z listy podpowiedzi, a następnie kliknij przycisk "Dodaj do trasy".</p>
-                            <button id=addToRoute class="btn btn-info col-md-10 col-xs-4 col-sm-2">Dodaj do trasy</button>
-                            <div class="route list-group">
-                                <ul href="#" class="route-list sortable">
-                                    TWOJA TRASA:
-                                </ul>
-                            </div>
-                            <span class="distance_text"></span>
-                        </div>
-                </div>
-                <div class="header col-xs-12" id="currencyContainer" ng-controller="currencyExchange">
-                    <div id="calculatorform" class="  col-xs-12 col-sm-12 col-md-6 col-lg-6" >
-                        <div class="calculatorTitle col-sm-offset-2 col-sm-12">KALKULATOR WALUTOWY</div>
-                        <div class="formBox col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/styleofcurrency.css">
+    <link rel="stylesheet" type='text/css' href="styles/loading_effect.css">
+    <link rel="icon" href="images/logo_EXPNS$.png">
+    <title>Expnss PLANNER</title>
+</head>
+<body>
+<main class="wrapper">
+    <a href="index.html">
+        <div class="logo_main col-xs-2 col-md-1"></div>
+    </a>
 
+    <div class="header col-xs-12 intro"></div>
+    <div class="pages">
+        <div class="header col-xs-12" id="plannerContainer">
+            <div id="map" class="col-md-10 col-xs-12"></div>
+            <div class="sidebar col-md-2 col-xs-12">
+                <p class="col-xs-12 text-left">Aby dodać miejscowość do trasy, wpisz jej nazwę w polu widocznym w górnym
+                    prawym rogu mapy i wybierz ją z listy podpowiedzi, a następnie kliknij przycisk "Dodaj do
+                    trasy".</p>
+                <button id=addToRoute class="btn btn-info col-md-10 col-xs-4 col-sm-2">Dodaj do trasy</button>
+                <div class="route list-group">
+                    <ul href="#" class="route-list sortable">
+                        TWOJA TRASA:
+                    </ul>
+                </div>
+                <span class="distance_text"></span>
+            </div>
+        </div>
+        <div class="header col-xs-12" id="currencyContainer" ng-controller="currencyExchange">
+            <div id="calculatorform" class="  col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="calculatorTitle col-sm-offset-2 col-sm-12">KALKULATOR WALUTOWY</div>
+                <div class="formBox col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
+
+                    <br>
+
+                    <form>
+                        <fieldset class="form-group">
+                            <label for="quantity">Kwota</label>
                             <br>
-                            <form>
-                                <fieldset class="form-group">
-                                    <label for="quantity">Kwota</label>
-                                    <br>
 
-                                    <div class="col-xs-10 col-sm-10 col-md-10">
-                                        <input type="number" class="form-control" id="quantity"
-                                               placeholder=" np. 15"
-                                               ng-model="quantity">
-                                    </div>
-                                </fieldset>
+                            <div class="col-xs-10 col-sm-10 col-md-10">
+                                <input type="number" class="form-control" id="quantity"
+                                       placeholder=" np. 15"
+                                       ng-model="quantity">
+                            </div>
+                        </fieldset>
 
-                                <fieldset class="form-group">
-                                    <label for="selectname">Przelicz z </label>
-                                    <br>
+                        <fieldset class="form-group">
+                            <label for="selectname">Przelicz z </label>
+                            <br>
 
-                                    <div class="col-xs-10 col-sm-10 col-md-10">
-                                        <select type="text" class="form-control selectpicker" id="selectname"
-                                                ng-model="selectname">
-                                        </select>
+                            <div class="col-xs-10 col-sm-10 col-md-10">
+                                <select type="text" class="form-control selectpicker" id="selectname"
+                                        ng-model="selectname">
+                                </select>
 
-                                    </div>
-                                </fieldset>
-                                <fieldset class="form-group">
-                                    <label for="selectSecondname">Przelicz na</label>
-                                    <br>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="selectSecondname">Przelicz na</label>
+                            <br>
 
-                                    <div class="col-xs-10 col-sm-10 col-md-10">
-                                        <select  type="text" class="form-control" id="selectSecondname"
-                                                ng-model="selectSecondname"
-                                                ng-change="updateCurrencyName()">
-                                        </select>
+                            <div class="col-xs-10 col-sm-10 col-md-10">
+                                <select type="text" class="form-control" id="selectSecondname"
+                                        ng-model="selectSecondname"
+                                        ng-change="updateCurrencyName()">
+                                </select>
 
-                                    </div>
-                                </fieldset>
+                            </div>
+                        </fieldset>
 
 
-                            </form>
-                        </div>
-                        <table id="currencyResult" class="table table-bordered">
-                            <thead>
-                            <tr class=" amount bg-primary">
-                                <th style="width:10vw">Kwota</th>
-                                <th>{{quantity | number}}</th>
-
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr class="converter alert-info">
-                                <td>Przelicznik</td>
-                                <td>{{selectname/selectSecondname}}</td>
-
-                            </tr>
-                            <tr class=" result bg-primary">
-                                <td>Wynik</td>
-                                <td class="result2">{{quantity *selectname/selectSecondname | number:2}} {{currencyName}}</td>
-
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div id="currencytable" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <p style="font-size: larger; font-weight: bolder; color: white">Kurs walut w stosunku do PLN</p>
-                    </div>
+                    </form>
                 </div>
-                <div class="header col-xs-12" id="salaryContainer">
+                <table id="currencyResult" class="table table-bordered">
+                    <thead>
+                    <tr class=" amount bg-primary">
+                        <th style="width:10vw">Kwota</th>
+                        <th>{{quantity | number}}</th>
 
-                </div>
-                <div class="header col-xs-12" id="migrationContainer">
-                    <div id="chartdiv"></div>
-                    <p class="floatflex" style="color: white">Źródło: http://ec.europa.eu/eurostat</p>
-                </div>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="converter alert-info">
+                        <td>Przelicznik</td>
+                        <td>{{selectname/selectSecondname}}</td>
+
+                    </tr>
+                    <tr class=" result bg-primary">
+                        <td>Wynik</td>
+                        <td class="result2">{{quantity *selectname/selectSecondname | number:2}} {{currencyName}}</td>
+
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="menu col-xs-12">
-                    <div id="planner" class="col-xs-12 col-sm-6 col col-md-3">
-                        <p class="height=5em floatflex">PLANOWANIE TRASY</p>
-                    </div>
-                    <div id="currency" class="col-xs-12 col-sm-6 col col-md-3">
-                        <p class="height=5em floatflex">KURSY WALUT</p>
-                    </div>
-                    <div id="salary" class="col-xs-12 col-sm-6 col col-md-3">
-                        <p class="height=5em floatflex">WYNAGRODZENIE</p>
-                    </div>
-                    <div id="migration" class="col-xs-12 col-sm-6 col col-md-3">
-                        <p class="height=5em floatflex">WYKRES MIGRACJI</p>
-                    </div>
+
+            <div id="currencytable" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <p style="font-size: larger; font-weight: bolder; color: white">Kurs walut w stosunku do PLN</p>
             </div>
-        </main>
+        </div>
+        <div class="header col-xs-12" id="salaryContainer">
 
-        <!--Skrypty zewnętrzne-->
-        <script type="text/javascript" src="scripts/libs/jquery-2.2.3.min.js" ></script>
-        <script type="text/javascript" src="scripts/libs/bootstrap.js"></script>
-        <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
-        <script type="text/javascript" src="scripts/libs/jquery.sortable.min.js"></script>
+        </div>
+        <div class="header col-xs-12" id="migrationContainer">
+            <div id="chartdiv"></div>
+            <p class="floatflex" style="color: white">Źródło: http://ec.europa.eu/eurostat</p>
+        </div>
+    </div>
+    <div class="menu col-xs-12">
+        <div id="planner" class="col-xs-12 col-sm-6 col col-md-3">
+            <p class="height=5em floatflex">PLANOWANIE TRASY</p>
+        </div>
+        <div id="currency" class="col-xs-12 col-sm-6 col col-md-3">
+            <p class="height=5em floatflex">KURSY WALUT</p>
+        </div>
+        <div id="salary" class="col-xs-12 col-sm-6 col col-md-3">
+            <p class="height=5em floatflex">WYNAGRODZENIE</p>
+        </div>
+        <div id="migration" class="col-xs-12 col-sm-6 col col-md-3">
+            <p class="height=5em floatflex">WYKRES MIGRACJI</p>
+        </div>
+    </div>
+</main>
 
-        <!--Skrypt odpowiedzialny za działanie menu-->
-        <script type="text/javascript" src="scripts/menu.js"></script>
+<!--Skrypty zewnętrzne-->
+<script type="text/javascript" src="scripts/libs/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="scripts/libs/bootstrap.js"></script>
+<script type="text/javascript" src="scripts/libs/angular.min.js"></script>
+<script type="text/javascript" src="scripts/libs/jquery.sortable.min.js"></script>
 
-        <script type="text/javascript" src="scripts/currencyInformation.js"></script>
-        <script type="text/javascript" src="scripts/planner.js"></script>
-        <script type="text/javascript" src="scripts/data.js"></script>
-        <script type="text/javascript" src="scripts/salary.js"></script>
+<!--Skrypt odpowiedzialny za działanie menu-->
+<script type="text/javascript" src="scripts/menu.js"></script>
 
-        <!--Skrypt Map API-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9ssQAa5Ngj9jOrwC7uMjFPpZ7fJFxgVg&libraries=places&callback=showMap&language=pl"></script>
+<script type="text/javascript" src="scripts/currencyInformation.js"></script>
+<script type="text/javascript" src="scripts/planner.js"></script>
+<script type="text/javascript" src="scripts/data.js"></script>
+<script type="text/javascript" src="scripts/salary.js"></script>
+
+<!--Skrypt Map API-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9ssQAa5Ngj9jOrwC7uMjFPpZ7fJFxgVg&libraries=places&callback=showMap&language=pl"></script>
 
 
-        <!--Skrypty odpowiedzialne za tworzenie wykresu-->
-        <script type="text/javascript" src="scripts/amcharts_script/amcharts/amcharts.js"></script>
-        <script type="text/javascript" src="scripts/amcharts_script/amcharts/serial.js"></script>
-        <script type="text/javascript" src="scripts/amcharts_script/amcharts/themes/black.js"></script>
-        <script type="text/javascript" src="scripts/amcharts_script/amcharts/plugins/dataloader/dataloader.min.js"></script>
-        <script type="text/javascript" src="scripts/migration_chart.js"></script>
+<!--Skrypty odpowiedzialne za tworzenie wykresu-->
+<script type="text/javascript" src="scripts/amcharts_script/amcharts/amcharts.js"></script>
+<script type="text/javascript" src="scripts/amcharts_script/amcharts/serial.js"></script>
+<script type="text/javascript" src="scripts/amcharts_script/amcharts/themes/black.js"></script>
+<script type="text/javascript" src="scripts/amcharts_script/amcharts/plugins/dataloader/dataloader.min.js"></script>
+<script type="text/javascript" src="scripts/migration_chart.js"></script>
 
-        <!--ANGULAR-->
-        <script type="text/javascript" src="app.js"></script>
+<!--ANGULAR-->
+<script type="text/javascript" src="app.js"></script>
 
-    </body>
+</body>
 </html>

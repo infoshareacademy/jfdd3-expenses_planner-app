@@ -1,6 +1,6 @@
 'use strict';
 
-AmCharts.ready(function(migration) {
+AmCharts.ready(function (migration) {
 
     var chart = new AmCharts.AmSerialChart();
 
@@ -12,9 +12,6 @@ AmCharts.ready(function(migration) {
     graph.type = "column";
     chart.addGraph(graph);
     chart.write('chartdiv');
-
-
-
 });
 
 var $chart = AmCharts.makeChart("chartdiv",
@@ -38,12 +35,12 @@ var $chart = AmCharts.makeChart("chartdiv",
         },
         "trendLines": [],
         "chartCursor": [{
-           "selectWithoutZooming": true
+            "selectWithoutZooming": true
         }],
 
         "dataLoader": {
-            "url" : "scripts/chart_data/migration_data.json",
-            "format" : "json",
+            "url": "scripts/chart_data/migration_data.json",
+            "format": "json",
             "async": false,
             "showCurtain": false
         },

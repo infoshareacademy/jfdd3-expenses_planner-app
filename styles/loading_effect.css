@@ -1,68 +1,62 @@
 /*Animacja wczytywania strony*/
-    .animation {
-        animation-name: animation;
-        animation-duration: 1s;
-        animation-timing-function: ease-in;
+.animation {
+    animation-name: animation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes animation {
+    0% {
+        opacity: 0;
     }
-
-    @keyframes animation {
-        0% {
-            opacity: 0;
-        }
-        25% {
-            opacity: 0.25;
-        }
-        50% {
-            opacity: 0.5;
-        }
-        75% {
-            opacity: 0.75;
-        }
-        100%{
-            opacity: 1;
-        }
+    25% {
+        opacity: 0.25;
     }
-
-
-
+    50% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 /*Zarządzanie klasa przycisku*/
-    .floatflex {
-        align-self: flex-end;
-        padding-bottom: 2vh;
-        color: #2A3E5C;
-    }
+.floatflex {
+    align-self: flex-end;
+    padding-bottom: 2vh;
+}
 
 /*Efekt przejazdu*/
-    #planner:hover {
-        color: white;
-        font-weight: bolder;
-        background-color: #478DFF;
+#planner:hover {
+    color: white;
+    font-weight: bolder;
+    background-color: #478DFF;
+}
 
-    }
+#currency:hover {
+    color: white;
+    font-weight: bolder;
+    background-color: #478DFF;
+}
 
-    #currency:hover {
-        color: white;
-        font-weight: bolder;
-        background-color: #478DFF;
-    }
+#salary:hover {
+    color: white;
+    font-weight: bolder;
+    background-color: #478DFF;
+}
 
-    #salary:hover {
-        color: white;
-        font-weight: bolder;
-        background-color: #478DFF;
-
-    }
-
-    #migration:hover {
-        color: white;
-        font-weight: bolder;
-        background-color: #478DFF;
-    }
+#migration:hover {
+    color: white;
+    font-weight: bolder;
+    background-color: #478DFF;
+}
 
 /*Aktywny przycisk    */
-    .activebutton {
-        background-color: #0B68FF;
-        color: white;
-        font-weight: bolder;
-    }
+.activebutton {
+    background-color: #0B68FF;
+    color: white;
+    font-weight: bolder;
+}

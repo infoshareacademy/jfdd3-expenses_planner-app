@@ -14,22 +14,14 @@ function showMap() {
         center: {lat: 50.05, lng: 14.25},
         zoom: 5,
         mapTypeControl: true,
-        mapTypeControlOptions:
-        {
+        mapTypeControlOptions: {
             style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
             position: google.maps.ControlPosition.TOP
         }
     });
     window.MapInstance = map;
-    //TODO: pomyśleć nad podziałem na mniejsze funkcje
-    //init();
-    //addAutocompleteControl();
-    //addMarkerListener();
-    //addPlaceChangeListener();
-
 
     var input = $('<input id="pac-input" class="controls" type="text" placeholder="Wpisz miejscowość">').get(0);
-
     var autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo('bounds', map);
 
@@ -39,11 +31,11 @@ function showMap() {
     var marker = new google.maps.Marker({
         map: map
     });
-    marker.addListener('click', function() {
+    marker.addListener('click', function () {
         infowindow.open(map, marker);
     });
 
-    autocomplete.addListener('place_changed', function() {
+    autocomplete.addListener('place_changed', function () {
         infowindow.close();
         var place = autocomplete.getPlace();
         currentPlace = place;
@@ -78,11 +70,9 @@ function showMap() {
         var start = locationData[0].name;
         var end = locationData[locationData.length - 1].name;
 
-
-
         var request = {
-            origin:start,
-            destination:end,
+            origin: start,
+            destination: end,
 
             waypoints: locationData.slice(1, locationData.length - 1).map(function (item) {
                 return {
@@ -92,17 +82,17 @@ function showMap() {
             }),
             travelMode: google.maps.TravelMode.DRIVING
         };
-        directionsService.route(request, function(result, status) {
+        directionsService.route(request, function (result, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 console.log(result);
                 directionsDisplay.setDirections(result);
             }
         });
-        if(locationData.length>1) {
+        if (locationData.length > 1) {
             var routeDistance = [];
             locationData.forEach(function (item, index) {
-                if (index < locationData.length-1) {
-                    var distance = google.maps.geometry.spherical.computeDistanceBetween (locationData[index].geometry.location, locationData[index+1].geometry.location);
+                if (index < locationData.length - 1) {
+                    var distance = google.maps.geometry.spherical.computeDistanceBetween (locationData[index].geometry.location, locationData[index + 1].geometry.location);
                     routeDistance.push(distance);
                 }
             });
@@ -110,12 +100,12 @@ function showMap() {
                 return prev + next;
             }, 0);
             console.log(routeDistance);
-            $('.distance_text').text('Długość trasy: ' + Math.round((routeDistance / 1000)*100) / 100)
+            $('.distance_text').text('Długość trasy: ' + Math.round((routeDistance / 1000) * 100) / 100)
         }
 
     }
 
-    $('#addToRoute').off('click').on('click', function() {
+    $('#addToRoute').off('click').on('click', function () {
         if (currentPlace) {
             var $nowyCel = $('<li>').addClass('list-group-item');
             locationData.push(currentPlace);

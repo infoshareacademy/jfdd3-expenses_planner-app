@@ -1,56 +1,55 @@
-
 /*Ustawienie maksymalne strony*/
 
-    .wrapper {
-        max-width: 1400px;
-        margin: 0 auto;
-    }
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
 /*Pozycjonowanie logo*/
 
-    .logo_main {
-        background-image: url("../images/logo_EXPNS$.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: absolute;
-        z-index: 1;
-        top:0;
-        left: 15vw;
-        height: 6vh;
-        padding: 10px 10px;
-        background-color: white;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-    }
+.logo_main {
+    background-image: url("../images/logo_EXPNS$.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 15vw;
+    height: 6vh;
+    padding: 10px 10px;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
 
-    .logo_main:hover {
-        height: 10vh;
-    }
+.logo_main:hover {
+    height: 10vh;
+}
 
 /*Ekran wejściowy*/
 
-    .intro {
-        background-color: #5bc0de;
-        background-image: url("../images/banner.jpg");
-        background-size: cover;
-        background-position: center top;
-        background-repeat: no-repeat;
-    }
+.intro {
+    background-color: #5bc0de;
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
 
-    .header {
-        width: 100%;
-        height: 75vh;
-    }
+.header {
+    width: 100%;
+    height: 75vh;
+}
 
 /*Pozyconowanie menu*/
 
-    .menu {
-        position: static;
-        background-color: white;
-        height: 25vh;
-        padding: 0 !important;
-    }
+.menu {
+    position: static;
+    background-color: white;
+    height: 25vh;
+    padding: 0 !important;
+}
 
 #plannerContainer {
     background-color: #2A3E5C;
@@ -58,41 +57,41 @@
     padding: 0;
 }
 
-    #map {
-        /*width: 80%;*/
-        height: 100%;
-        float:left;
-    }
+#map {
+    /*width: 80%;*/
+    height: 100%;
+    float: left;
+}
 
-    .controls {
-        background-color: #fff;
-        border-radius: 2px;
-        border: 1px solid transparent;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        box-sizing: border-box;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        height: 29px;
-        margin-right: 20px;
-        margin-top: 10px;
-        outline: none;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 30%;
-        min-width: 150px;
-    }
+.controls {
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    height: 29px;
+    margin-right: 20px;
+    margin-top: 10px;
+    outline: none;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 30%;
+    min-width: 150px;
+}
 
-    .controls:focus {
-        border-color: #4d90fe;
-    }
+.controls:focus {
+    border-color: #4d90fe;
+}
 
 .sidebar {
     /*width: 20%;*/
     height: 100%;
     float: left;
     text-align: center;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -115,8 +114,8 @@
     width: 90%;
     background-color: #f2f2f2;
     height: 500px;
-    overflow:hidden;
-    overflow-y:auto;
+    overflow: hidden;
+    overflow-y: auto;
     border-radius: 4px;
 }
 
@@ -132,12 +131,15 @@
     #plannerContainer {
         height: auto !important;
     }
+
     #map {
         height: 60vh;
     }
+
     .sidebar {
         height: 75vh;
     }
+
     .route {
         width: 60%;
     }
@@ -145,44 +147,44 @@
 
 /*Globalne dla menu*/
 
-    #planner, #currency, #salary, #migration {
-        height: 100%;
-        background-image: url("../images/icon_planner.png");
-        background-position: center top 1vh;
-        background-repeat: no-repeat;
-        background-size: 15vh;
-        display: flex;
-        justify-content: center;
-        cursor: pointer;
-        -webkit-transition-delay: 0.1s;
-        transition-duration: 0.4s;
-    }
+#planner, #currency, #salary, #migration {
+    height: 100%;
+    background-image: url("../images/icon_planner.png");
+    background-position: center top 1vh;
+    background-repeat: no-repeat;
+    background-size: 15vh;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-transition-delay: 0.1s;
+    transition-duration: 0.4s;
+}
 
-    #currency {
-        background-image: url("../images/icon_currency.png");
-        height: 100%;
-    }
+#currency {
+    background-image: url("../images/icon_currency.png");
+    height: 100%;
+}
 
-    #salary {
-        height: 100%;
-        background-image: url("../images/icon_salary.png");
-    }
+#salary {
+    height: 100%;
+    background-image: url("../images/icon_salary.png");
+}
 
-    #migration {
-        height: 100%;
-        background-image: url("../images/icon_chart.png");
-    }
+#migration {
+    height: 100%;
+    background-image: url("../images/icon_chart.png");
+}
 
 /*Wykres ustawienia CSS*/
 
-    #migrationContainer {
-        background-color: #2A3E5C;
-    }
+#migrationContainer {
+    background-color: #2A3E5C;
+}
 
-    #chartdiv {
-        align-content: center;
-        min-width: 420px;
-        max-width: 1600px;
-        height: 80vh;
-        padding-top: 10vh;
-    }
+#chartdiv {
+    align-content: center;
+    min-width: 420px;
+    max-width: 1600px;
+    height: 80vh;
+    padding-top: 10vh;
+}

@@ -11,8 +11,7 @@ function initMap() {
         center: {lat: 51.540, lng: 15.546},
         zoom: 5,
         mapTypeControl: true,
-        mapTypeControlOptions:
-        {
+        mapTypeControlOptions: {
             style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
             position: google.maps.ControlPosition.TOP
         }
@@ -27,9 +26,9 @@ function initMap() {
 
             animation: google.maps.Animation.DROP
         });
-        country.marker.addListener('click', function() {
+        country.marker.addListener('click', function () {
             map.setCenter(this.getPosition());
-            if(lastInfowindow){
+            if (lastInfowindow) {
                 lastInfowindow.close();
             }
             lastInfowindow = new google.maps.InfoWindow({
