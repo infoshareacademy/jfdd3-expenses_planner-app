@@ -30,8 +30,9 @@
                 </div>
                 <div class="header col-xs-12" id="currencyContainer" ng-controller="currencyExchange">
                     <div id="calculatorform" class="  col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+                        <div class="calculatorTitle col-sm-offset-2 col-sm-12">KALKULATOR WALUTOWY</div>
                         <div class="formBox col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
-                            <div class="calculatorTitle col-sm-12">KALKULATOR WALUTOWY</div>
+
                             <br>
                             <form>
                                 <fieldset class="form-group">
@@ -39,7 +40,7 @@
                                     <br>
 
                                     <div class="col-xs-10 col-sm-10 col-md-10">
-                                        <input type="text" class="form-control" id="quantity"
+                                        <input type="number" class="form-control" id="quantity"
                                                placeholder=" np. 15"
                                                ng-model="quantity">
                                     </div>
@@ -61,8 +62,9 @@
                                     <br>
 
                                     <div class="col-xs-10 col-sm-10 col-md-10">
-                                        <select type="text" class="form-control" id="selectSecondname"
-                                                ng-model="selectSecondname">
+                                        <select  type="text" class="form-control" id="selectSecondname"
+                                                ng-model="selectSecondname"
+                                                ng-change="updateCurrencyName()">
                                         </select>
 
                                     </div>
@@ -73,27 +75,29 @@
                         </div>
                         <table id="currencyResult" class="table table-bordered">
                             <thead>
-                            <tr class="bg-primary">
-                                <th style="font-weight: bold; color: white">Kwota</th>
-                                <th>{{quantity}}</th>
+                            <tr class=" amount bg-primary">
+                                <th style="width:10vw">Kwota</th>
+                                <th>{{quantity | number}}</th>
 
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="alert-info">
-                                <td style="font-weight: bold; color: black">Przelicznik</td>
-                                <td>{{selectname/selectSecondname | number}}</td>
+                            <tr class="converter alert-info">
+                                <td>Przelicznik</td>
+                                <td>{{selectname/selectSecondname}}</td>
 
                             </tr>
-                            <tr class="bg-primary">
-                                <td style="font-weight: bold; color: white">Kwota</td>
-                                <td>{{quantity *selectname/selectSecondname | number:2}}</td>
+                            <tr class=" result bg-primary">
+                                <td>Wynik</td>
+                                <td class="result2">{{quantity *selectname/selectSecondname | number:2}} {{currencyName}}</td>
 
                             </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div id="currencytable" class="hidden-xs hidden-sm col-md-6 col-lg-6">
+
+                    <div id="currencytable" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <p style="font-size: larger; font-weight: bolder">Kurs walut w stosunku do PLN</p>
                     </div>
                 </div>
                 <div class="header col-xs-12" id="salaryContainer">
@@ -146,5 +150,6 @@
 
         <!--ANGULAR-->
         <script type="text/javascript" src="app.js"></script>
+
     </body>
 </html>
