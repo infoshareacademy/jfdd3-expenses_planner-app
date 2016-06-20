@@ -20,7 +20,9 @@ $(document).ready(function () {
 
             var money = [{code: 'USD'}, {code: 'EUR'}, {code: 'CAD'},
                 {code: 'CHF'}, {code: 'JPY'}, {code: 'TRY'}, {code: 'SEK'},
-                {code: 'GBP'}, {code: 'CZK'}, {code: 'DKK'}];
+                {code: 'GBP'}, {code: 'CZK'}, {code: 'DKK'},{code: 'HUF'},
+                {code: 'UAH'},{code: 'ISK'},{code: 'NOK'},{code: 'HRK'},
+                {code: 'BRL'},{code: 'MXN'},{code: 'INR'},{code: 'BGN'} ];
 
             exchangeRate.forEach(function (value) {
                 money.forEach(function (cur) {
@@ -77,7 +79,7 @@ $(document).ready(function () {
 
         }
     });
-
+    //The way to change the main conteiners
 
     $('.pages > div').hide();
 // Show chosen div, and hide all others
