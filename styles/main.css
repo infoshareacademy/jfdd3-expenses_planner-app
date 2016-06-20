@@ -53,13 +53,13 @@
     }
 
 #plannerContainer {
-    border: 2px solid #82C4FF;
-    background-color: #82C4FF;
+    background-color: #2A3E5C;
     height: 75vh;
+    padding: 0;
 }
 
     #map {
-        width: 80%;
+        /*width: 80%;*/
         height: 100%;
         float:left;
     }
@@ -88,23 +88,59 @@
     }
 
 .sidebar {
-    width: 20%;
+    /*width: 20%;*/
     height: 100%;
     float: left;
     text-align: center;
     display:flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.text-left {
+    color: white;
+    border: solid white 1px;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+#addToRoute {
+    margin: 20px auto;
 }
 
 .route {
-    margin: 0 auto;
+    margin: 20px auto;
     width: 90%;
-    background-color: white;
+    background-color: #f2f2f2;
+    height: 500px;
+    overflow:hidden;
+    overflow-y:auto;
+    border-radius: 4px;
 }
 
-.route_text {
+.route-list {
+    padding-top: 5px;
+}
+
+.distance_text {
     color: white;
+}
+
+@media screen and (max-width: 991px) {
+    #plannerContainer {
+        height: auto !important;
+    }
+    #map {
+        height: 60vh;
+    }
+    .sidebar {
+        height: 75vh;
+    }
+    .route {
+        width: 60%;
+    }
 }
 
 /*Globalne dla menu*/
@@ -140,7 +176,7 @@
 /*Wykres ustawienia CSS*/
 
     #migrationContainer {
-        background-color: black;
+        background-color: #2A3E5C;
     }
 
     #chartdiv {

@@ -28,7 +28,7 @@ function showMap() {
     //addPlaceChangeListener();
 
 
-    var input = $('<input id="pac-input" class="controls" type="text" placeholder="Enter a location">').get(0);
+    var input = $('<input id="pac-input" class="controls" type="text" placeholder="Wpisz miejscowość">').get(0);
 
     var autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo('bounds', map);
@@ -110,21 +110,21 @@ function showMap() {
                 return prev + next;
             }, 0);
             console.log(routeDistance);
-            $('.route_text').text('Długość trasy: ' + Math.round((routeDistance / 1000)*100) / 100)
+            $('.distance_text').text('Długość trasy: ' + Math.round((routeDistance / 1000)*100) / 100)
         }
 
     }
 
     $('#addToRoute').off('click').on('click', function() {
         if (currentPlace) {
-            var $nowyCel = $('<a>').addClass('list-group-item');
+            var $nowyCel = $('<li>').addClass('list-group-item');
             locationData.push(currentPlace);
             calcRoute();
             $nowyCel.text(currentPlace.name);
             console.log($nowyCel);
             $('.route').append($nowyCel);
         }
-
+        $('.sortable').sortable();
     });
 
 }

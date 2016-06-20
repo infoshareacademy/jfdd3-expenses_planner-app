@@ -17,15 +17,16 @@
             <div class="header col-xs-12 intro"></div>
             <div class="pages">
                 <div class="header col-xs-12" id="plannerContainer">
-                        <div id="map"></div>
-                        <div class="sidebar">
-                            <button id=addToRoute class="btn btn-success col-xs-10">Dodaj miejscowość do trasy</button>
+                        <div id="map" class="col-md-10 col-xs-12"></div>
+                        <div class="sidebar col-md-2 col-xs-12">
+                            <p class="col-xs-12 text-left">Aby dodać miejscowość do trasy, wpisz jej nazwę w polu widocznym w górnym prawym rogu mapy i wybierz ją z listy podpowiedzi, a następnie kliknij przycisk "Dodaj do trasy".</p>
+                            <button id=addToRoute class="btn btn-info col-md-10 col-xs-4 col-sm-2">Dodaj do trasy</button>
                             <div class="route list-group">
-                                <a href="#" class="list-group-item active">
+                                <ul href="#" class="route-list sortable">
                                     TWOJA TRASA:
-                                </a>
+                                </ul>
                             </div>
-                            <span class="route_text"></span>
+                            <span class="distance_text"></span>
                         </div>
                 </div>
                 <div class="header col-xs-12" id="currencyContainer" ng-controller="currencyExchange">
@@ -97,7 +98,7 @@
                     </div>
 
                     <div id="currencytable" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <p style="font-size: larger; font-weight: bolder">Kurs walut w stosunku do PLN</p>
+                        <p style="font-size: larger; font-weight: bolder; color: white">Kurs walut w stosunku do PLN</p>
                     </div>
                 </div>
                 <div class="header col-xs-12" id="salaryContainer">
@@ -105,7 +106,7 @@
                 </div>
                 <div class="header col-xs-12" id="migrationContainer">
                     <div id="chartdiv"></div>
-                    <p class="floatflex">Źródło: http://ec.europa.eu/eurostat</p>
+                    <p class="floatflex" style="color: white">Źródło: http://ec.europa.eu/eurostat</p>
                 </div>
             </div>
             <div class="menu col-xs-12">
@@ -128,6 +129,7 @@
         <script type="text/javascript" src="scripts/libs/jquery-2.2.3.min.js" ></script>
         <script type="text/javascript" src="scripts/libs/bootstrap.js"></script>
         <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
+        <script type="text/javascript" src="scripts/libs/jquery.sortable.min.js"></script>
 
         <!--Skrypt odpowiedzialny za działanie menu-->
         <script type="text/javascript" src="scripts/menu.js"></script>
@@ -138,7 +140,7 @@
         <script type="text/javascript" src="scripts/salary.js"></script>
 
         <!--Skrypt Map API-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9ssQAa5Ngj9jOrwC7uMjFPpZ7fJFxgVg&libraries=places&callback=showMap"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9ssQAa5Ngj9jOrwC7uMjFPpZ7fJFxgVg&libraries=places&callback=showMap&language=pl"></script>
 
 
         <!--Skrypty odpowiedzialne za tworzenie wykresu-->
