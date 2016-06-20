@@ -114,7 +114,5 @@ function showMap() {
             console.log($nowyCel);
             $('.route').append($nowyCel);
         }
-        $('.sortable').sortable();
     });
-
 }
