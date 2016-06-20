@@ -117,7 +117,7 @@ function showMap() {
 
     $('#addToRoute').off('click').on('click', function() {
         if (currentPlace) {
-            var $nowyCel = $('<li>').addClass('list-group-item') //.append($('<button>')).$addClass('glyphicon-remove');
+            var $nowyCel = $('<li>').addClass('list-group-item');
             locationData.push(currentPlace);
             calcRoute();
             $nowyCel.text(currentPlace.name);
@@ -126,10 +126,5 @@ function showMap() {
         }
         $('.sortable').sortable();
     });
-
-    // $(".route-list").on("click", "button", function(e) {
-    //     e.preventDefault();
-    //     $(this).parent().remove();
-    // });
 
 }
