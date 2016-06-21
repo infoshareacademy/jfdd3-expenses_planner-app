@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="773784762775-cs4vpm5avcn7365nb87gv7e0tj4c0i8c.apps.googleusercontent.com">
     <link rel="stylesheet" type="text/css" href="styles/reset.css">
     <link rel="stylesheet" type="text/css" href="styles/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
@@ -13,6 +14,7 @@
 </head>
 <body>
 <main class="wrapper">
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <a href="index.html">
         <div class="logo_main col-xs-2 col-md-1"></div>
     </a>
@@ -158,6 +160,9 @@
 
 <!--ANGULAR-->
 <script type="text/javascript" src="app.js"></script>
+
+<!--Logowanie poprzez Google+-->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </body>
 </html>
