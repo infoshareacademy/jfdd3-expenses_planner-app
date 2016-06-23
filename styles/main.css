@@ -1,9 +1,11 @@
 /*Ustawienie maksymalne strony*/
 
 .wrapper {
+    position: relative;
     max-width: 1400px;
     margin: 0 auto;
 }
+
 
 /*Pozycjonowanie logo*/
 
@@ -15,7 +17,7 @@
     position: absolute;
     z-index: 1;
     top: 0;
-    left: 15vw;
+    left: 10vw;
     height: 6vh;
     padding: 10px 10px;
     background-color: white;
@@ -25,6 +27,28 @@
 
 .logo_main:hover {
     height: 10vh;
+}
+
+/*pozycjonowanie sign-in button*/
+.g-signin2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.g-signout {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: inline-block;
+    background: white;
+    color: #444;
+    width: 120px !important;
+    height: 36px !important;
+    box-shadow: 1px 1px 1px grey;
+    white-space: nowrap;
 }
 
 /*Ekran wejściowy*/
@@ -197,4 +221,22 @@
     max-width: 1600px;
     height: 80vh;
     padding-top: 10vh;
+}
+
+/*greeting div*/
+.greeting {
+    position: absolute;
+    margin: 30vh 0 0 35vw;
+    height: 20vh;
+    width:30vw;
+    background-color: white;
+    font-family: Roboto,arial,sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    ;
+}
+
+.greetingSpan {
+    vertical-align: middle
 }
