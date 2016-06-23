@@ -30,25 +30,7 @@
 }
 
 /*Efekt przejazdu*/
-#planner:hover {
-    color: white;
-    font-weight: bolder;
-    background-color: #478DFF;
-}
-
-#currency:hover {
-    color: white;
-    font-weight: bolder;
-    background-color: #478DFF;
-}
-
-#salary:hover {
-    color: white;
-    font-weight: bolder;
-    background-color: #478DFF;
-}
-
-#migration:hover {
+#planner:hover, #currency:hover, #salary:hover, #migration:hover, #spreadSheet:hover  {
     color: white;
     font-weight: bolder;
     background-color: #478DFF;

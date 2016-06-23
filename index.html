@@ -65,81 +65,13 @@
                 <span class="distance_text"></span>
             </div>
         </div>
-        <div class="header col-xs-12" id="currencyContainer" ng-controller="currencyExchange">
-            <div id="calculatorform" class="  col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="calculatorTitle col-sm-offset-2 col-sm-12">KALKULATOR WALUTOWY</div>
-                <div class="formBox col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
-
-                    <br>
-
-                    <form>
-                        <fieldset class="form-group">
-                            <label for="quantity">Kwota</label>
-                            <br>
-
-                            <div class="col-xs-10 col-sm-10 col-md-10">
-                                <input type="number" class="form-control" id="quantity"
-                                       placeholder=" np. 15"
-                                       ng-model="quantity">
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="form-group">
-                            <label for="selectname">Przelicz z </label>
-                            <br>
-
-                            <div class="col-xs-10 col-sm-10 col-md-10">
-                                <select type="text" class="form-control selectpicker" id="selectname"
-                                        ng-model="selectname">
-                                </select>
-
-                            </div>
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <label for="selectSecondname">Przelicz na</label>
-                            <br>
-
-                            <div class="col-xs-10 col-sm-10 col-md-10">
-                                <select type="text" class="form-control" id="selectSecondname"
-                                        ng-model="selectSecondname"
-                                        ng-change="updateCurrencyName()">
-                                </select>
-
-                            </div>
-                        </fieldset>
-
-
-                    </form>
-                </div>
-                <table id="currencyResult" class="table table-bordered">
-                    <thead>
-                    <tr class=" amount bg-primary">
-                        <th style="width:10vw">Kwota</th>
-                        <th>{{quantity | number}}</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class="converter alert-info">
-                        <td>Przelicznik</td>
-                        <td>{{selectname/selectSecondname}}</td>
-
-                    </tr>
-                    <tr class=" result bg-primary">
-                        <td>Wynik</td>
-                        <td class="result2">{{quantity *selectname/selectSecondname | number:2}} {{currencyName}}</td>
-
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div id="currencytable" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <p style="font-size: larger; font-weight: bolder; color: white">Kurs walut w stosunku do PLN</p>
-            </div>
+        <div class="header col-xs-12" id="currencyContainer" >
+            <currency-ex></currency-ex>
         </div>
         <div class="header col-xs-12" id="salaryContainer">
-
+        </div>
+        <div id="spreadSheetContainer">
+            <sheet-container></sheet-container>
         </div>
         <div class="header col-xs-12" id="migrationContainer">
             <div id="chartdiv"></div>
@@ -147,18 +79,23 @@
         </div>
     </div>
     <div class="menu col-xs-12">
-        <div id="planner" class="col-xs-12 col-sm-6 col col-md-3">
+        <div class="col-md-1"></div>
+        <div id="planner" class="col-xs-12 col-sm-6 col col-md-2">
             <p class="height=5em floatflex">PLANOWANIE TRASY</p>
         </div>
-        <div id="currency" class="col-xs-12 col-sm-6 col col-md-3">
+        <div id="currency" class="col-xs-12 col-sm-6 col col-md-2">
             <p class="height=5em floatflex">KURSY WALUT</p>
         </div>
-        <div id="salary" class="col-xs-12 col-sm-6 col col-md-3">
+        <div id="salary" class="col-xs-12 col-sm-6 col col-md-2">
             <p class="height=5em floatflex">WYNAGRODZENIE</p>
         </div>
-        <div id="migration" class="col-xs-12 col-sm-6 col col-md-3">
+        <div id="migration" class="col-xs-12 col-sm-6 col col-md-2">
             <p class="height=5em floatflex">WYKRES MIGRACJI</p>
         </div>
+        <div id="spreadSheet" class="col-xs-12 col-sm-6 col col-md-2">
+            <p class="height=5em floatflex">WYDATKOMAT</p>
+        </div>
+        <div class="col-md-1"></div>
     </div>
 </main>
 
@@ -190,6 +127,8 @@
 
 <!--ANGULAR-->
 <script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="scripts/spreadSheet/spreadSheet.js"></script>
+<script type="text/javascript" src="scripts/currencyExchange/currencyExchange.js"></script>
 
 <!--Logowanie poprzez Google+-->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
