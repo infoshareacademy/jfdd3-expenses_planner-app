@@ -34,21 +34,19 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 .g-signout {
-    position: absolute;
+    position: absolute !important;
     top: 0;
     left: 0;
     z-index: 1;
     display: inline-block;
     background: white;
     color: #444;
-    width: 190px;
-    height: 10px;
-    border-radius: 5px;
-    border: thin solid #888;
+    width: 120px !important;
+    height: 36px !important;
     box-shadow: 1px 1px 1px grey;
     white-space: nowrap;
 }
@@ -226,5 +224,14 @@
     margin: 30vh 0 0 35vw;
     height: 20vh;
     width:30vw;
-    background-color: red;
+    background-color: white;
+    font-family: Roboto,arial,sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    ;
+}
+
+.greetingSpan {
+    vertical-align: middle
 }
