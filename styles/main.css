@@ -152,7 +152,7 @@
 
 /*Globalne dla menu*/
 
-#planner, #currency, #salary, #migration {
+#planner, #currency, #salary, #migration, #spreadSheet {
     height: 100%;
     background-image: url("../images/icon_planner.png");
     background-position: center top 1vh;
@@ -178,6 +178,11 @@
 #migration {
     height: 100%;
     background-image: url("../images/icon_chart.png");
+}
+
+#spreadSheet{
+    height: 100%;
+    background-image: url("../images/Notepad.png");
 }
 
 /*Wykres ustawienia CSS*/

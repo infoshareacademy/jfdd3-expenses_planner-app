@@ -9,7 +9,7 @@ $(document).ready(function () {
         $('#' + $(this).attr('id')).addClass('activebutton');
         $(".menu").css({"height": "10vh"});
         $(".floatflex").css({"align-self": "center", "padding": "0", "padding-left": "5vw"});
-        $("#planner, #currency, #salary, #migration").css({
+        $("#planner, #currency, #salary, #migration, #spreadSheet").css({
             "background-size": "5vh",
             "background-position": "left 8vh center"
         });
