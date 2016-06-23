@@ -13,11 +13,11 @@
     }
 
     function ctrlSpreadSheet($scope) {
-        $scope.newProduct;
-        $scope.items = [
-        ];
+        $scope.items = [];
 
-
+        function resetProduct() {
+            $scope.newProduct = {};
+        }
 
         $scope.licz = function(){
             console.log($scope.items);
@@ -26,8 +26,6 @@
             },0);
 
         };
-
-
 
         $scope.removeItem = function(product){
             return $scope.items.forEach(function(item,index){
@@ -41,8 +39,8 @@
             $scope.newProduct.isBought = true;
             var product = angular.copy($scope.newProduct);
             $scope.items.push(product);
+            resetProduct();
         }
     }
-
 
 })();
