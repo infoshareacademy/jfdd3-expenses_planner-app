@@ -8,7 +8,7 @@ function onSignIn(googleUser) {
     $('.g-signin2').fadeOut(50);
     $('#gSignOutWrapper').fadeIn(1000);
     var greeting = $('<div>').append($('<span>')).addClass(".greetingSpan").text("Witaj " + profile.getName());
-    greeting.addClass('greeting').appendTo(".pages").delay(2000).fadeOut(1000, function () {
+    greeting.addClass('greeting').appendTo(".logInfo").delay(2000).fadeOut(1000, function () {
     $(this).remove()});
 }
 
@@ -25,7 +25,7 @@ function signOut() {
 
 
 
-        greeting.addClass('greeting').appendTo(".pages").delay(2000).fadeOut(1000, function () {
+        greeting.addClass('greeting').appendTo(".logInfo").delay(2000).fadeOut(1000, function () {
             $(this).remove();
         });
     });
