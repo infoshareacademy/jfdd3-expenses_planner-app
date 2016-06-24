@@ -63,6 +63,20 @@ $(document).ready(function () {
                 option.attr('label', items.code + " " + "-" + " " + items.currency);
                 option.attr('value', items.mid);
                 $('#selectSecondname').append(option);
+
+            });
+            var option = $('<option>');
+            option.text('PLN - zloty(Polska)');
+            option.attr('selected', 'selected');
+            option.attr('value', 1);
+            option.attr('label', 'PLN - zloty(Polska)');
+            $('#TheCurrency').append(option);
+            exchangeRate.forEach(function (item) {
+                option = $('<option>');
+                option.text(item.code + item.currency);
+                option.attr('label', item.code + " " + "-" + " " + item.currency);
+                option.attr('value', item.mid);
+                $('#TheCurrency').append(option);
             });
 
             $('#currencyResult').on('change', (function myCounting() {
