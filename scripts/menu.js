@@ -8,10 +8,11 @@ $(document).ready(function () {
         $('#' + $(this).attr('id') + "Container").show().css({"height": "90vh"}).addClass('animation');
         $('#' + $(this).attr('id')).addClass('activebutton');
         $(".menu").css({"height": "10vh"});
+        $("#googlelogin").css({"height": "10vh"});
         $(".floatflex").css({"align-self": "center", "padding": "0", "padding-left": "5vw"});
-        $("#planner, #currency, #salary, #migration, #spreadSheet").css({
+        $("#planner, #currency, #salary, #migration, #spreadSheet, #googlelogin").css({
             "background-size": "5vh",
-            "background-position": "left 8vh center"
+            "background-position": "left 1vw center"
         });
         google.maps.event.trigger(MapInstance, 'resize');
         $('.intro').hide();
