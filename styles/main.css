@@ -1,7 +1,6 @@
 /*Ustawienie maksymalne strony*/
 
 .wrapper {
-    position: relative;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -27,28 +26,6 @@
 
 .logo_main:hover {
     height: 10vh;
-}
-
-/*pozycjonowanie sign-in button*/
-.g-signin2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-
-.g-signout {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    display: inline-block;
-    background: white;
-    color: #444;
-    width: 120px !important;
-    height: 36px !important;
-    box-shadow: 1px 1px 1px grey;
-    white-space: nowrap;
 }
 
 /*Ekran wejściowy*/
@@ -222,6 +199,19 @@
     height: 80vh;
     padding-top: 10vh;
 }
+
+#googlelogin {
+    height: 25vh;
+    background-image: url("../images/btn_google+_light_normal_ios@3x.png");
+    background-repeat: no-repeat;
+    background-position: center top 1vh;
+    background-size: 15vh;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
 
 /*greeting div*/
 .greeting {
