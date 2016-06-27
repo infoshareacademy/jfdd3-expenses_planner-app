@@ -1,0 +1,25 @@
+/*Pozyconowanie menu*/
+
+.menu {
+    position: static;
+    background-color: white;
+    height: 25vh;
+    padding: 0 !important;
+}
+
+
+@media screen and (min-width: 992px) {
+    .small .menu > #googlelogin{
+        background-image: none;
+    }
+}
+
+.buttonSmall {
+align-self: center;
+}
+
+.smallFloatFlex {
+    align-self: center;
+    padding: 0;
+    padding-left: 5vw
+}

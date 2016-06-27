@@ -1,0 +1,45 @@
+
+#googlelogin {
+    height: 25vh;
+    background-image: url("../../images/btn_google+_light_normal_ios@3x.png");
+    background-repeat: no-repeat;
+    background-position: center top 1vh;
+    background-size: 15vh;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+#gSignOutWrapper{
+    display: none;
+}
+
+#customBtnOut:hover {
+    cursor: pointer;
+}
+
+
+span.buttonText {
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    align-items: center;
+
+    font-weight: bold;
+    /* Use the Roboto font that is loaded in the <head> */
+    font-family: 'Roboto', sans-serif;
+}
+
+sign-out {
+    align-self: flex-end;
+    padding-bottom: 2vh;
+
+
+}
+
+#my-signin2 {
+    align-self: flex-end;
+    padding-bottom: 2vh;
+}

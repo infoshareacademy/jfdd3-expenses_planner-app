@@ -43,14 +43,7 @@
     height: 75vh;
 }
 
-/*Pozyconowanie menu*/
 
-.menu {
-    position: static;
-    background-color: white;
-    height: 25vh;
-    padding: 0 !important;
-}
 
 #plannerContainer {
     background-color: #2A3E5C;
