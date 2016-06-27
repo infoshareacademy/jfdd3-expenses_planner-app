@@ -23,8 +23,6 @@ function signOut() {
         $('#gSignOutWrapper').fadeOut(50);
         $('.g-signin2').fadeIn(1000);
 
-
-
         greeting.addClass('greeting').appendTo(".logInfo").delay(2000).fadeOut(1000, function () {
             $(this).remove();
         });

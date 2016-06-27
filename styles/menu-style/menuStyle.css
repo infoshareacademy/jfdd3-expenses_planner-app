@@ -3,7 +3,6 @@
 .menu {
     position: static;
     background-color: white;
-    height: 25vh;
     padding: 0 !important;
 }
 #googlelogin {
@@ -33,3 +32,11 @@ align-self: center;
     padding-left: 5vw
 }
 
+.inactive {
+    background-color: grey;
+    opacity: 0.5;
+    align-content: center;
+    flex-flow: column nowrap;
+
+    padding-left: 0;
+}

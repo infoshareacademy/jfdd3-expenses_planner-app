@@ -19,15 +19,26 @@
     cursor: pointer;
 }
 
+.abcRioButton {
+    display: flex;
+}
+
+
 
 span.buttonText {
-    display: inline-block;
-    padding-left: 20px;
-    padding-right: 20px;
+
+    align-self: center;
+
+    vertical-align: baseline;
 
     align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .21px;
+    margin-left: 6px;
+    margin-right: 6px;
 
-    font-weight: bold;
+
     /* Use the Roboto font that is loaded in the <head> */
     font-family: 'Roboto', sans-serif;
 }
@@ -37,9 +48,24 @@ sign-out {
     padding-bottom: 2vh;
 
 
+    margin-left: 6px;
+    margin-right: 6px;
+
 }
 
 #my-signin2 {
     align-self: flex-end;
     padding-bottom: 2vh;
+}
+
+@media screen {
+    .mainMenu.small sign-out {
+        align-self: center;
+        padding-bottom: 0;
+    }
+
+    .mainMenu.small #my-signin2 {
+        align-self: center;
+        padding-bottom: 0;
+    }
 }

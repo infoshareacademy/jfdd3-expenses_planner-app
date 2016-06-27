@@ -54,7 +54,7 @@
 /*Globalne dla menu*/
 
 #planner, #currency, #salary, #migration, #spreadSheet {
-    height: 100%;
+    height: 25vh;
     background-image: url("../images/icon_planner.png");
     background-position: center top 1vh;
     background-repeat: no-repeat;
@@ -68,21 +68,21 @@
 
 #currency {
     background-image: url("../images/icon_currency.png");
-    height: 100%;
+    height: 25vh;
 }
 
 #salary {
-    height: 100%;
+    height: 25vh;
     background-image: url("../images/icon_salary.png");
 }
 
 #migration {
-    height: 100%;
+    height: 25vh;
     background-image: url("../images/icon_chart.png");
 }
 
 #spreadSheet{
-    height: 100%;
+    height: 25vh;
     background-image: url("../images/Notepad.png");
 }
 
