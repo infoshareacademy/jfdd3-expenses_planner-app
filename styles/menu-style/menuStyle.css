@@ -6,10 +6,19 @@
     height: 25vh;
     padding: 0 !important;
 }
-
+#googlelogin {
+    height: 25vh;
+    background-image: url("../../images/btn_google+_light_normal_ios@3x.png");
+    background-repeat: no-repeat;
+    background-position: center top 1vh;
+    background-size: 15vh;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
 
 @media screen and (min-width: 992px) {
-    .small .menu > #googlelogin{
+    .mainMenu.small #googlelogin{
         background-image: none;
     }
 }
@@ -23,3 +32,4 @@ align-self: center;
     padding: 0;
     padding-left: 5vw
 }
+

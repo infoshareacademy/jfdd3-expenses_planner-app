@@ -18,6 +18,8 @@ $(document).ready(function () {
             "background-position": "left 1vw center"
         });
 
+        $(".mainMenu").addClass("small");
+
         $("sign-out, #my-signin2").addClass("buttonSmall");
 
         google.maps.event.trigger(MapInstance, 'resize');
