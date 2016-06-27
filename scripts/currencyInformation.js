@@ -6,7 +6,7 @@
 $(document).ready(function () {
     $.ajax({
         type: 'GET',
-        url: 'http://api.nbp.pl/api/exchangerates/tables/A/2016-06-10/?format=json',
+        url: 'http://api.nbp.pl/api/exchangerates/tables/A/?format=json',
         dataType: 'json',
         success: function (data) {
             var exchangeRate = data[0].rates;
@@ -63,6 +63,20 @@ $(document).ready(function () {
                 option.attr('label', items.code + " " + "-" + " " + items.currency);
                 option.attr('value', items.mid);
                 $('#selectSecondname').append(option);
+
+            });
+            var option = $('<option>');
+            option.text('PLN - zloty(Polska)');
+            option.attr('selected', 'selected');
+            option.attr('value', 1);
+            option.attr('label', 'PLN - zloty(Polska)');
+            $('#TheCurrency').append(option);
+            exchangeRate.forEach(function (item) {
+                option = $('<option>');
+                option.text(item.code + item.currency);
+                option.attr('label', item.code + " " + "-" + " " + item.currency);
+                option.attr('value', item.mid);
+                $('#TheCurrency').append(option);
             });
 
             $('#currencyResult').on('change', (function myCounting() {
@@ -74,10 +88,20 @@ $(document).ready(function () {
                     $('#currencyResult').text(score);
                 }
             } ));
+        },
+
+        error: function(data) {
+            $('#currencytable').append($('<span id="ProblemWithApp">').html( 'Przepraszamy. Nie możemy pobrać danych, proszę spróbować później!' ));
+            $('#ProblemWithApp').css({ 'color' :"white"});
+            console.error(data);
+        },
+        fail: function () {
+            console.log('fail')
         }
     });
 
-    //The way to change the main conteiners
+
+    //The way to change the main containers
     $('.pages > div').hide();
 
     // Show chosen div, and hide all others
