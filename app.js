@@ -29,7 +29,13 @@
         };
 
         $scope.updateStorage = function () {
-            localStorage.setItem('shoppingList', JSON.stringify($scope.items));
+            debugger;
+            localStorage.setItem('shoppingList', JSON.stringify($scope.items.map(function(item){
+                return {
+                    name: item.name,
+                    price: item.price
+                }
+            })));
         };
 
         $scope.removeItem = function(product){
