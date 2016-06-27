@@ -12,19 +12,26 @@
         }
     }
 
-    function ctrlSpreadSheet($scope) {
+    function ctrlSpreadSheet($scope, CurrenciesService) {
         $scope.items = [];
+        var defaultCurrency;
+
+        CurrenciesService.downloadCurrencies().then(function (data) {
+            $scope.currencies = data;
+            defaultCurrency = data[0];
+            resetProduct();
+        });
 
         function resetProduct() {
-            $scope.newProduct = {};
+            $scope.newProduct = {
+                currency: defaultCurrency
+            };
         }
 
         $scope.licz = function(){
-            console.log($scope.items);
             $scope.total = $scope.items.reduce(function(prevItem,currItem){
                 return prevItem + currItem.price;
             },0);
-
         };
 
         $scope.removeItem = function(product){
@@ -41,11 +48,4 @@
             $scope.items.push(product);
             resetProduct();
         };
-
-
-        $scope.updateCurrencyLabel = function () {
-            $scope.currencyLabel = $("#TheCurrency option:selected").attr('label');
-            $scope.newcurrencyLabel = angular.copy($scope.currencyLabel);
-        }
-
 }})();

@@ -23,11 +23,12 @@
                         </div>
                         <fieldset class="form-group">
                             <select type="text" class="form-control selectpicker" id="TheCurrency"
-                                    ng-model="TheCurrency" >
+                                    ng-model="newProduct.currency"
+                                    ng-options="currency.currency for currency in currencies">
                             </select>
                         </fieldset>
                         <button type="submit" class="btn btn-block btn-primary"
-                                ng-click="addToList(); licz(); updateCurrencyLabel()">Dodaj!
+                                ng-click="addToList(); licz();">Dodaj!
                         </button>
                     </form>
                 </div>
@@ -50,7 +51,7 @@
                             ng-click="product.isBought = !product.isBought">
                             <td>{{product.name}}</td>
                             <td>{{product.price }}</td>
-                            <td>{{currencyLabel}}</td>
+                            <td>{{product.currency.code}}</td>
                             <td><span ng-click="removeItem(product); licz()" aria-hidden="true">(remove)</span>
                             </td>
                         </tr>
