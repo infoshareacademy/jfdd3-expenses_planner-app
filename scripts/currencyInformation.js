@@ -6,7 +6,7 @@
 $(document).ready(function () {
     $.ajax({
         type: 'GET',
-        url: 'http://api.nbp.pl/api/exchangerates/tables/A/2016-06-10/?format=json',
+        url: 'http://api.nbp.pl/api/exchangerates/tables/A/?format=json',
         dataType: 'json',
         success: function (data) {
             var exchangeRate = data[0].rates;
@@ -74,10 +74,20 @@ $(document).ready(function () {
                     $('#currencyResult').text(score);
                 }
             } ));
+        },
+
+        error: function(data) {
+            $('#currencytable').append($('<span id="ProblemWithApp">').html( 'Przepraszamy. Nie możemy pobrać danych, proszę spróbować później!' ));
+            $('#ProblemWithApp').css({ 'color' :"white"});
+            console.error(data);
+        },
+        fail: function () {
+            console.log('fail')
         }
     });
 
-    //The way to change the main conteiners
+
+    //The way to change the main containers
     $('.pages > div').hide();
 
     // Show chosen div, and hide all others
