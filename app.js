@@ -40,7 +40,12 @@
             var product = angular.copy($scope.newProduct);
             $scope.items.push(product);
             resetProduct();
-        }
-    }
+        };
 
-})();
+
+        $scope.updateCurrencyLabel = function () {
+            $scope.currencyLabel = $("#TheCurrency option:selected").attr('label');
+            $scope.newcurrencyLabel = angular.copy($scope.currencyLabel);
+        }
+
+}})();

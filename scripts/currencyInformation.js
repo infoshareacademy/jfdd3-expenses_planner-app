@@ -9,6 +9,7 @@ $(document).ready(function () {
         url: 'http://api.nbp.pl/api/exchangerates/tables/A/?format=json',
         dataType: 'json',
         success: function (data) {
+
             var exchangeRate = data[0].rates;
             var table = $('<table class="table table-hover">');
             var row = $('<tr>');
