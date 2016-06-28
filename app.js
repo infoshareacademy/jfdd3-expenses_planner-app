@@ -12,47 +12,61 @@
         }
     }
 
-    function ctrlSpreadSheet($scope) {
+    function ctrlSpreadSheet($scope, CurrenciesService) {
+
         $scope.items = localStorage.getItem('shoppingList')
-            ? JSON.parse(localStorage.getItem('shoppingList'))
-            : [];
+            ? JSON.parse(localStorage.getItem('shoppingList')) : [];
+
+        //$scope.items = [];
+        var defaultCurrency;
+
+        CurrenciesService.downloadCurrencies().then(function (data) {
+            $scope.currencies = data;
+            defaultCurrency = data[0];
+            resetProduct();
+        });
 
         function resetProduct() {
-            $scope.newProduct = {};
+            $scope.newProduct = {
+                currency: defaultCurrency
+            };
         }
 
-        $scope.licz = function(){
+        $scope.licz = function () {
             console.log($scope.items);
-            $scope.total = $scope.items.reduce(function(prevItem,currItem){
+            $scope.total = $scope.items.reduce(function (prevItem, currItem) {
                 return prevItem + currItem.price;
-            },0);
+            }, 0);
         };
 
         $scope.updateStorage = function () {
-            debugger;
-            localStorage.setItem('shoppingList', JSON.stringify($scope.items.map(function(item){
+
+            localStorage.setItem('shoppingList', JSON.stringify($scope.items.map(function (item) {
                 return {
                     name: item.name,
-                    price: item.price
+                    price: item.price,
+                    currency: item.currency
                 }
             })));
         };
 
-        $scope.removeItem = function(product){
-            $scope.items.forEach(function(item,index){
-                if(item === product)
-                    $scope.items.splice(index,1);
+
+        $scope.removeItem = function (product) {
+            return $scope.items.forEach(function (item, index) {
+                if (item === product)
+                    $scope.items.splice(index, 1);
+                $scope.updateStorage();
             });
-            $scope.updateStorage();
+
+
         };
 
-        $scope.addToList = function() {
+        $scope.addToList = function () {
             $scope.newProduct.isBought = true;
             var product = angular.copy($scope.newProduct);
             $scope.items.push(product);
             $scope.updateStorage();
             resetProduct();
-        }
+        };
     }
-
 })();

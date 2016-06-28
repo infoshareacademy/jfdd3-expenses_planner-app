@@ -1,0 +1,58 @@
+/*Pozyconowanie menu*/
+
+.menu {
+    position: static;
+    background-color: white;
+    padding: 0 !important;
+}
+#googlelogin {
+    height: 25vh;
+    background-image: url("../../images/btn_google+_light_normal_ios@3x.png");
+    background-repeat: no-repeat;
+    background-position: center top 1vh;
+    background-size: 15vh;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 992px) {
+    .mainMenu.small #googlelogin{
+        background-image: none;
+    }
+}
+
+@media screen {
+    .menu.small #spreadSheet {
+        height: 10vh;
+        background-size: 5vh;
+        background-position: left 1vw top 50%;
+    }
+    .menu.small .inactive {
+        height: 10vh;
+
+    }
+}
+
+.buttonSmall {
+align-self: center;
+}
+
+.smallFloatFlex {
+    align-self: center;
+    padding: 0;
+    padding-left: 5vw
+}
+
+.inactive {
+    background-color: grey;
+    opacity: 0.5;
+    align-content: center;
+    flex-flow: column nowrap;
+
+    height: 25vh;
+
+    padding-left: 0;
+
+    pointer-events: none;
+}
