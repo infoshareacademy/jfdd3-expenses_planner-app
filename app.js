@@ -44,7 +44,8 @@
             localStorage.setItem('shoppingList', JSON.stringify($scope.items.map(function (item) {
                 return {
                     name: item.name,
-                    price: item.price
+                    price: item.price,
+                    currency: item.currency
                 }
             })));
         };
