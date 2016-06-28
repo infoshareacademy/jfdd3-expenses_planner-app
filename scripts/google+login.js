@@ -7,6 +7,8 @@
             .append($('<br>'))
             .append($('<img>').attr({src: profile.getImageUrl()}).addClass("greetingImage"));
 
+        $('#spreadSheetContainer .spreadSheetC').removeClass('inactiveContainer');
+            //.append($('<span>').addClass('inactiveText').text("Zaloguj się ponownie do Google+"));
         $('.inactive').attr("id","spreadSheet").removeClass("inactive");
         $('.inactiveFloatFlex').removeClass("inactiveFloatFlex").addClass("floatflex");
         $('.g-signin2').fadeOut(50);
@@ -27,6 +29,7 @@
 
             var greeting = $('<div>')
                 .append($('<span>').addClass("logOutSpan").text("Żegnaj "));
+        $('#spreadSheetContainer .spreadSheetC').addClass('inactiveContainer');
         $('#spreadSheet > p.floatflex').removeClass("floatflex").addClass("inactiveFloatFlex");
         $('#spreadSheet').removeAttr("id","spreadSheet").addClass("inactive");
         $('#gSignOutWrapper').fadeOut(50);

@@ -67,3 +67,9 @@ align-self: center;
     align-self: center;
     padding-bottom: 0;
 }
+
+.inactiveContainer {
+    background-color: grey;
+    height: inherit;
+    pointer-events: none;
+}
