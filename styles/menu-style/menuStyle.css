@@ -22,6 +22,18 @@
     }
 }
 
+@media screen {
+    .menu.small #spreadSheet {
+        height: 10vh;
+        background-size: 5vh;
+        background-position: left 1vw top 50%;
+    }
+    .menu.small .inactive {
+        height: 10vh;
+
+    }
+}
+
 .buttonSmall {
 align-self: center;
 }
@@ -38,5 +50,9 @@ align-self: center;
     align-content: center;
     flex-flow: column nowrap;
 
+    height: 25vh;
+
     padding-left: 0;
+
+    pointer-events: none;
 }

@@ -2,7 +2,7 @@
 .greeting {
     position: absolute;
     margin: 30vh 0 0 40vw;
-    height: 20vh;
+    height: 22vh;
     width: 20vw;
     z-index: 1;
     background-color: white;
@@ -14,5 +14,10 @@
 }
 
 .greetingSpan {
+    padding-top: 2vh;
     vertical-align: middle
+}
+
+.greetingImage {
+    height: 15vh;
 }

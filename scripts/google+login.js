@@ -1,16 +1,23 @@
 
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail());
+
+    $('.inactive').attr("id","spreadSheet").removeClass("inactive");
+
     $('.g-signin2').fadeOut(50);
     $('#gSignOutWrapper').fadeIn(1000);
-    var greeting = $('<div>').append($('<span>')).addClass(".greetingSpan").text("Witaj " + profile.getName());
-    greeting.addClass('greeting').appendTo(".logInfo").delay(2000).fadeOut(1000, function () {
-    $(this).remove()});
+    var greeting = $('<div>').append($('<span>')).addClass(".greetingSpan").text("Witaj " + profile.getName())
+        .append($('<br>'))
+        .append($('<img>').attr({src: profile.getImageUrl()}).addClass("greetingImage"));
+
+    $('.inactiveText').fadeOut(100);
+
+    greeting.addClass('greeting').appendTo(".logInfo").delay(2000)
+    .fadeOut(1000, function () {
+        $(this).remove()});
 }
+
+
 
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
@@ -23,6 +30,8 @@ function signOut() {
         $('#gSignOutWrapper').fadeOut(50);
         $('.g-signin2').fadeIn(1000);
 
+        $('#spreadSheet').removeAttr("id","spreadSheet").addClass("inactive");
+        $('.inactiveText').fadeIn(100);
         greeting.addClass('greeting').appendTo(".logInfo").delay(2000).fadeOut(1000, function () {
             $(this).remove();
         });
