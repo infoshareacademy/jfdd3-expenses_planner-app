@@ -29,6 +29,7 @@
         }
 
         $scope.licz = function(){
+            console.log($scope.items);
             $scope.total = $scope.items.reduce(function(prevItem,currItem){
                 return prevItem + currItem.price;
             },0);
