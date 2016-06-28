@@ -54,9 +54,11 @@
         $scope.removeItem = function (product) {
             return $scope.items.forEach(function (item, index) {
                 if (item === product)
-                    $scope.items.splice(index, 1)
+                    $scope.items.splice(index, 1);
+                $scope.updateStorage();
             });
-            $scope.updateStorage();
+
+
         };
 
         $scope.addToList = function () {
