@@ -26,19 +26,7 @@
     <div class="header col-xs-12 intro"></div>
     <div class="pages">
         <div class="header col-xs-12" id="plannerContainer">
-            <div id="map" class="col-md-10 col-xs-12"></div>
-            <div class="sidebar col-md-2 col-xs-12">
-                <p class="col-xs-12 text-left">Aby dodać miejscowość do trasy, wpisz jej nazwę w polu widocznym w górnym
-                    prawym rogu mapy i wybierz ją z listy podpowiedzi, a następnie kliknij przycisk "Dodaj do
-                    trasy".</p>
-                <button id=addToRoute class="btn btn-info col-md-10 col-xs-4 col-sm-2">Dodaj do trasy</button>
-                <div class="route list-group">
-                    <ul href="#" class="route-list sortable">
-                        TWOJA TRASA:
-                    </ul>
-                </div>
-                <span class="distance_text"></span>
-            </div>
+           <tripplanner></tripplanner>
         </div>
         <div class="header col-xs-12" id="currencyContainer" >
             <currency-ex></currency-ex>
@@ -95,7 +83,7 @@
 <script type="text/javascript" src="scripts/google+login.js"></script>
 
 <!--Skrypt Map API-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9ssQAa5Ngj9jOrwC7uMjFPpZ7fJFxgVg&libraries=places&callback=showMap&language=pl"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9ssQAa5Ngj9jOrwC7uMjFPpZ7fJFxgVg&libraries=places&language=pl"></script>
 
 
 <!--Skrypty odpowiedzialne za tworzenie wykresu-->
@@ -110,6 +98,7 @@
 <script type="text/javascript" src="scripts/spreadSheet/spreadSheet.js"></script>
 <script type="text/javascript" src="scripts/spreadSheet/CurrenciesService.js"></script>
 <script type="text/javascript" src="scripts/currencyExchange/currencyExchange.js"></script>
+<script type="text/javascript" src="scripts/tripPlanner/tripPlanner.js"></script>
 <script type="text/javascript" src="scripts/buttonSheet/buttonSheet.js"></script>
 
 <!--Logowanie poprzez Google+-->
