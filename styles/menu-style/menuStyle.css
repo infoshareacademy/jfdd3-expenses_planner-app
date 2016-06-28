@@ -30,7 +30,6 @@
     }
     .menu.small .inactive {
         height: 10vh;
-
     }
 }
 
@@ -44,15 +43,27 @@ align-self: center;
     padding-left: 5vw
 }
 
+.inactive p {
+    color: white;
+    font-weight: bolder;
+}
+
 .inactive {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
     background-color: grey;
     opacity: 0.5;
-    align-content: center;
-    flex-flow: column nowrap;
-
     height: 25vh;
-
-    padding-left: 0;
-
     pointer-events: none;
+    align-content: stretch;
+}
+
+.inactiveText {
+ text-align: center;
+}
+
+.inactiveFloatFlex {
+    align-self: center;
+    padding-bottom: 0;
 }

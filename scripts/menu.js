@@ -1,12 +1,13 @@
+'use strict';
 
 $(document).ready(function () {
     $('.pages > div').hide();
 // Show chosen div, and hide all others
     $(".menu div").click(function () {
+
         $('.pages > div').hide();
         $('.menu > div').removeClass('activebutton');
         $('#' + $(this).attr('id') + "Container").show().css({"height": "90vh"}).addClass('animation');
-
         $('#' + $(this).attr('id')).addClass('activebutton');
 
         $(".floatflex").addClass("smallFloatFlex");
