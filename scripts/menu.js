@@ -6,14 +6,26 @@ $(document).ready(function () {
         $('.pages > div').hide();
         $('.menu > div').removeClass('activebutton');
         $('#' + $(this).attr('id') + "Container").show().css({"height": "90vh"}).addClass('animation');
+
         $('#' + $(this).attr('id')).addClass('activebutton');
-        $(".menu").css({"height": "10vh"});
-        $(".floatflex").css({"align-self": "center", "padding": "0", "padding-left": "5vw"});
-        $("#planner, #currency, #salary, #migration, #spreadSheet").css({
+
+        $(".floatflex").addClass("smallFloatFlex");
+
+        $("#planner, #currency, #salary, #migration, #spreadSheet, #googlelogin")
+            .css({
+            "height": "10vh",
             "background-size": "5vh",
-            "background-position": "left 8vh center"
+            "background-position": "left 1vw center"
         });
+
+        $(".mainMenu").addClass("small");
+
+        $("sign-out, #my-signin2").addClass("buttonSmall");
+
         google.maps.event.trigger(MapInstance, 'resize');
+
         $('.intro').hide();
+
+        $('.menu').addClass('small');
     });
 });
