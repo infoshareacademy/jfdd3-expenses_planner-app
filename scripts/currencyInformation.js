@@ -9,6 +9,7 @@ $(document).ready(function () {
         url: 'http://api.nbp.pl/api/exchangerates/tables/A/?format=json',
         dataType: 'json',
         success: function (data) {
+
             var exchangeRate = data[0].rates;
             var table = $('<table class="table table-hover">');
             var row = $('<tr>');
@@ -64,19 +65,6 @@ $(document).ready(function () {
                 option.attr('value', items.mid);
                 $('#selectSecondname').append(option);
 
-            });
-            var option = $('<option>');
-            option.text('PLN - zloty(Polska)');
-            option.attr('selected', 'selected');
-            option.attr('value', 1);
-            option.attr('label', 'PLN - zloty(Polska)');
-            $('#TheCurrency').append(option);
-            exchangeRate.forEach(function (item) {
-                option = $('<option>');
-                option.text(item.code + item.currency);
-                option.attr('label', item.code + " " + "-" + " " + item.currency);
-                option.attr('value', item.mid);
-                $('#TheCurrency').append(option);
             });
 
             $('#currencyResult').on('change', (function myCounting() {
