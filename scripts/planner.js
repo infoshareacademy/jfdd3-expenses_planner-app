@@ -8,6 +8,13 @@ function setupMap() {
 var currentPlace;
 var locationData = [];
 
+function getMapInstance() {
+    if (window.MapInstance === undefined) {
+        showMap();
+    }
+    return window.MapInstance;
+}
+
 function showMap() {
     var mapDiv = $('#map').get(0);
     var map = new google.maps.Map(mapDiv, {

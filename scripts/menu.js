@@ -13,7 +13,7 @@ $(document).ready(function () {
             "background-size": "5vh",
             "background-position": "left 8vh center"
         });
-        google.maps.event.trigger(MapInstance, 'resize');
         $('.intro').hide();
+        google.maps.event.trigger(getMapInstance(), 'resize');
     });
 });

@@ -1,5 +1,5 @@
 angular.module('expensesPlanner')
-    .directive('tripPlanner', function() {
+    .directive('tripplanner', function() {
         return {
             restrict: 'E',
             templateUrl: 'scripts/tripPlanner/tripPlanner.html'
