@@ -32,10 +32,9 @@
             };
         }
 
-        $scope.licz = function () {
-            console.log($scope.items);
-            $scope.total = $scope.items.reduce(function (prevItem, currItem) {
-                return prevItem + currItem.price;
+        $scope.sumUp = function () {
+            return $scope.items.reduce(function (prevItem, currItem) {
+                return prevItem + (currItem.price * currItem.currency.mid);
             }, 0);
         };
 
@@ -53,20 +52,27 @@
 
         $scope.removeItem = function (product) {
             return $scope.items.forEach(function (item, index) {
-                if (item === product)
+                if (item === product) {
                     $scope.items.splice(index, 1);
-                $scope.updateStorage();
+                    $scope.updateStorage();
+                }
             });
-
-
         };
 
+        function isValidProduct() {
+            return $scope.newProduct.name !== undefined
+                && $scope.newProduct.name.length > 0
+                && $scope.newProduct.price > 0;
+        }
+
         $scope.addToList = function () {
-            $scope.newProduct.isBought = true;
-            var product = angular.copy($scope.newProduct);
-            $scope.items.push(product);
-            $scope.updateStorage();
-            resetProduct();
+            if (isValidProduct()) {
+                $scope.newProduct.isBought = true;
+                var product = angular.copy($scope.newProduct);
+                $scope.items.push(product);
+                $scope.updateStorage();
+                resetProduct();
+            }
         };
     }
 })();
