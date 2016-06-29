@@ -1,5 +1,5 @@
 <div class="container" ng-controller="ShoppingListCtrl">
-    <h1>Rejestrator wydatków</h1>
+    <h1 id="currencyTitle">Rejestrator wydatków</h1>
 
     <div class="row">
         <div class="col-lg-4 col-sm-4 col-xs-12">
@@ -22,6 +22,7 @@
                                    ng-model="newProduct.price">
                         </div>
                         <fieldset class="form-group">
+                            <label for="product">Waluta</label>
                             <select type="text" class="form-control selectpicker" id="TheCurrency"
                                     ng-model="newProduct.currency"
                                     ng-options="currency.currency for currency in currencies">
@@ -34,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-8 col-sm-8 col-xs-12">
+        <div id="shoppingList" class=" col-lg-8 col-sm-8 col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Lista zakupów</h3>
