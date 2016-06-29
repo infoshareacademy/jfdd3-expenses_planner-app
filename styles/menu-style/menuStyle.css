@@ -68,6 +68,11 @@ align-self: center;
     padding-bottom: 0;
 }
 
+.inactiveSmallFloatFlex {
+    align-self: center;
+    padding-bottom: 0;
+}
+
 .inactiveContainer {
     background-color: grey;
     height: inherit;

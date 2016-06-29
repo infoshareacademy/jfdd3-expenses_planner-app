@@ -11,6 +11,7 @@ $(document).ready(function () {
         $('#' + $(this).attr('id')).addClass('activebutton');
 
         $(".floatflex").addClass("smallFloatFlex");
+        $(".inactive .inactiveFloatFlex").removeClass("smallFloatFlex").addClass("inactiveSmallFloatFlex");
 
         $("#planner, #currency, #salary, #migration, #spreadSheet, #googlelogin")
             .css({

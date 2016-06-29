@@ -11,6 +11,7 @@
             //.append($('<span>').addClass('inactiveText').text("Zaloguj się ponownie do Google+"));
         $('.inactive').attr("id","spreadSheet").removeClass("inactive");
         $('.inactiveFloatFlex').removeClass("inactiveFloatFlex").addClass("floatflex");
+        $('#spreadSheet > p.inactiveSmallFloatFlex').removeClass("inactiveSmallFloatFlex").addClass("smallFloatFlex");
         $('.g-signin2').fadeOut(50);
         $('#gSignOutWrapper').fadeIn(1000);
         $('.inactiveText').fadeOut(100);
@@ -31,6 +32,7 @@
                 .append($('<span>').addClass("logOutSpan").text("Żegnaj "));
         $('#spreadSheetContainer .spreadSheetC').addClass('inactiveContainer');
         $('#spreadSheet > p.floatflex').removeClass("floatflex").addClass("inactiveFloatFlex");
+        $('#spreadSheet > p.smallFloatFlex').removeClass("smallFloatFlex").addClass("inactiveSmallFloatFlex");
         $('#spreadSheet').removeAttr("id","spreadSheet").addClass("inactive");
         $('#gSignOutWrapper').fadeOut(50);
             $('.g-signin2').fadeIn(1000);
