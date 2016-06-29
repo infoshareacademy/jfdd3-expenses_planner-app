@@ -28,7 +28,7 @@
                             </select>
                         </fieldset>
                         <button type="submit" class="btn btn-block btn-primary"
-                                ng-click="addToList(); licz();">Dodaj!
+                                ng-click="addToList();">Dodaj!
                         </button>
                     </form>
                 </div>
@@ -52,12 +52,12 @@
                             <td>{{product.name}}</td>
                             <td>{{product.price }}</td>
                             <td>{{product.currency.code}}</td>
-                            <td><span ng-click="removeItem(product); licz()" aria-hidden="true">(remove)</span>
+                            <td><span ng-click="removeItem(product);" aria-hidden="true">(remove)</span>
                             </td>
                         </tr>
                     </table>
                     <p class="pull-right">
-                        {{total*100/100 | number: 2}}
+                        {{sumUp() | number: 2}} PLN
                     </p>
                 </div>
             </div>

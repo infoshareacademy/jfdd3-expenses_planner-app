@@ -24,7 +24,7 @@ $(document).ready(function () {
 
         $("sign-out, #my-signin2").addClass("buttonSmall");
 
-        google.maps.event.trigger(MapInstance, 'resize');
+        google.maps.event.trigger(getMapInstance(), 'resize');
 
         $('.intro').hide();
 
