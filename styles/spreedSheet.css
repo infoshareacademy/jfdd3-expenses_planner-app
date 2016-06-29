@@ -1,4 +1,4 @@
-.container h1{
+.container h1 {
     text-align: center;
     padding-top: 7vh;
 }
@@ -8,7 +8,7 @@
 }
 
 #spreadSheetContainer {
-    background-color:#2A3E5C ;
+    background-color: #2A3E5C;
 
 }
 
@@ -18,19 +18,20 @@
 
 #shoppingList {
     max-height: 70vh;
-    overflow:hidden;
-    overflow-y:auto;
+    overflow: hidden;
+    overflow-y: auto;
 }
 
-@media screen and (max-width: 789px){
+@media screen and (max-width: 789px) {
     #spreadSheetContainer {
         height: auto !important;
-}
+    }
+
     #shoppingList {
-max-height:none;
-}}
+        max-height: none;
+    }
+}
 
-
-.pointer{
+.pointer {
     cursor: pointer;
 }
