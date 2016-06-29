@@ -12,6 +12,8 @@
         $('.inactiveFloatFlex').removeClass("inactiveFloatFlex").addClass("floatflex");
         $('#spreadSheet > p.inactiveSmallFloatFlex').removeClass("inactiveSmallFloatFlex").addClass("smallFloatFlex");
 
+        $('.spreadSheetC > .inactiveText').remove();
+
         $('.g-signin2').fadeOut(50);
         $('#gSignOutWrapper').fadeIn(1000);
         $('.inactiveText').fadeOut(100);
@@ -36,6 +38,8 @@
         $('#spreadSheet > p.smallFloatFlex').removeClass("smallFloatFlex").addClass("inactiveSmallFloatFlex");
         $('#spreadSheet').removeAttr("id","spreadSheet").addClass("inactive");
 
+        $('.inactiveContainer').append($('<p>').addClass('inactiveText').text("Ekran dostępny jest po zalogowaniu na Google+"))
+
         $('#gSignOutWrapper').fadeOut(50);
         $('.g-signin2').fadeIn(1000);
         $('.inactiveText').fadeIn(100);
@@ -47,5 +51,3 @@
             });
 
     }
-
-
