@@ -1,71 +1,69 @@
-
-#googlelogin {
-    height: 25vh;
-    background-image: url("../../images/btn_google+_light_normal_ios@3x.png");
-    background-repeat: no-repeat;
-    background-position: center top 1vh;
-    background-size: 15vh;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-}
-
-
-#gSignOutWrapper{
-    display: none;
-}
-
-#customBtnOut:hover {
-    cursor: pointer;
-}
-
-.abcRioButton {
-    display: flex;
-}
-
-
-
-span.buttonText {
-
-    align-self: center;
-
-    vertical-align: baseline;
-
-    align-items: center;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: .21px;
-    margin-left: 6px;
-    margin-right: 6px;
-
-
-    /* Use the Roboto font that is loaded in the <head> */
-    font-family: 'Roboto', sans-serif;
-}
-
-sign-out {
-    align-self: flex-end;
-    padding-bottom: 2vh;
-
-
-    margin-left: 6px;
-    margin-right: 6px;
-
-}
-
-#my-signin2 {
-    align-self: flex-end;
-    padding-bottom: 2vh;
-}
-
-@media screen {
-    .mainMenu.small sign-out {
-        align-self: center;
-        padding-bottom: 0;
+/*Google Login Style*/
+    #googlelogin {
+        height: 25vh;
+        background-image: url("../../images/btn_google+_light_normal_ios@3x.png");
+        background-repeat: no-repeat;
+        background-position: center top 1vh;
+        background-size: 15vh;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
     }
 
-    .mainMenu.small #my-signin2 {
-        align-self: center;
-        padding-bottom: 0;
+    #gSignOutWrapper{
+        display: none;
     }
-}
+
+    #customBtnOut:hover {
+        cursor: pointer;
+    }
+
+    .abcRioButton {
+        display: flex;
+    }
+
+
+/*In button styling*/
+    span.buttonText {
+
+        align-self: center;
+
+        vertical-align: baseline;
+
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: .21px;
+        margin-left: 6px;
+        margin-right: 6px;
+
+
+        /* Use the Roboto font that is loaded in the <head> */
+        font-family: 'Roboto', sans-serif;
+    }
+
+/*Button position*/
+    sign-out {
+        align-self: flex-end;
+        padding-bottom: 2vh;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+    #my-signin2 {
+        align-self: flex-end;
+        padding-bottom: 2vh;
+    }
+
+/*Media change for button*/
+    @media screen {
+        .mainMenu.small sign-out {
+            align-self: center;
+            padding-bottom: 0;
+        }
+
+        .mainMenu.small #my-signin2 {
+            align-self: center;
+            padding-bottom: 0;
+        }
+    }

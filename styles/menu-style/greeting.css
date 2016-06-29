@@ -1,23 +1,78 @@
+.logInfo {
+
+}
+
 /*greeting div*/
-.greeting {
-    position: absolute;
-    margin: 30vh 0 0 40vw;
-    height: 22vh;
-    width: 20vw;
-    z-index: 1;
-    background-color: white;
-    font-family: Roboto,arial,sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    text-align: center;
-;
+    .greeting {
+        position: absolute;
+        margin: 25vh 0 0 43vw;
+        padding: 15px;
+        height: auto;
+        width: auto;
+        z-index: 1;
+        background-color: white;
+        font-family: Roboto,arial,sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+
+    }
+
+    .greetingSpan {
+        padding-top: 2vh;
+        vertical-align: middle
+    }
+
+    .greetingImage {
+        height: 15vh;
+    }
+
+/*Log out div*/
+
+    .greetingLogOut {
+        position: absolute;
+        margin: 35vh 0 0 43vw;
+        padding: 15px;
+        height: auto;
+        width: auto;
+        z-index: 1;
+        background-color: white;
+        font-family: Roboto,arial,sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logOutSpan {
+        align-self: center;
+    }
+
+/*Media for greeting and log out*/
+
+@media screen and (max-width: 991px) {
+    .greeting {
+        margin: 25vh 0 0 43vw;
+    }
+    .greetingLogOut {
+        margin: 35vh 0 0 38vw;
+    }
 }
 
-.greetingSpan {
-    padding-top: 2vh;
-    vertical-align: middle
+@media screen and (max-width: 767px) {
+    .greeting {
+        margin: 25vh 0 0 38vw;
+    }
+    .greetingLogOut {
+        margin: 35vh 0 0 32vw;
+    }
 }
 
-.greetingImage {
-    height: 15vh;
+@media screen and (max-width: 480px) {
+    .greeting {
+        margin: 25vh 0 0 30vw;
+    }
+    .greetingLogOut {
+        margin: 35vh 0 0 24vw;
+    }
 }
