@@ -27,10 +27,8 @@
         height: auto !important;
 }
     #shoppingList {
-
-        overflow:visible;
-        overflow-y:auto;
-}
+max-height:none;
+}}
 
 
 .pointer{
