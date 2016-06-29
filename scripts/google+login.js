@@ -19,7 +19,8 @@
         $('.inactiveText').fadeOut(100);
 
         greeting.addClass('greeting')
-            .appendTo(".logInfo").delay(2000)
+            .appendTo(".logInfo")
+            .delay(2000)
             .fadeOut(1000, function () {
                 $(this).remove()});
     }
@@ -31,7 +32,7 @@
             });
 
             var greeting = $('<div>')
-                .append($('<span>').addClass("logOutSpan").text("Żegnaj "));
+                .append($('<span>').addClass("logOutSpan").text("Do zobaczenia wkrótce"));
 
         $('#spreadSheetContainer .spreadSheetC').addClass('inactiveContainer');
         $('#spreadSheet > p.floatflex').removeClass("floatflex").addClass("inactiveFloatFlex");
@@ -45,7 +46,8 @@
         $('.inactiveText').fadeIn(100);
 
             greeting.addClass('greetingLogOut')
-                .appendTo(".logInfo").delay(2000)
+                .appendTo(".logInfo")
+                .delay(2000)
                 .fadeOut(1000, function () {
                 $(this).remove();
             });
