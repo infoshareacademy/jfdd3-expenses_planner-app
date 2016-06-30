@@ -23,6 +23,8 @@
             .delay(2000)
             .fadeOut(1000, function () {
                 $(this).remove()});
+
+        $('.row').fadeIn(500);
     }
 
     function signOut() {
@@ -51,5 +53,5 @@
                 .fadeOut(1000, function () {
                 $(this).remove();
             });
-
+        $('.row').fadeOut(500);
     }
