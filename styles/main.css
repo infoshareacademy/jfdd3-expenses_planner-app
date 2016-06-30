@@ -28,6 +28,12 @@
     height: 10vh;
 }
 
+@media screen and (min-width: 1751px) {
+    .logo_main {
+        left: 15vw;
+    }
+}
+
 /*Ekran wejściowy*/
 
 .intro {
