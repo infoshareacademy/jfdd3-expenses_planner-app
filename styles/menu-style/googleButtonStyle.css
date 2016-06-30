@@ -1,15 +1,4 @@
 /*Google Login Style*/
-    #googlelogin {
-        height: 25vh;
-        background-image: url("../../images/btn_google+_light_normal_ios@3x.png");
-        background-repeat: no-repeat;
-        background-position: center top 1vh;
-        background-size: 15vh;
-        display: flex;
-        justify-content: center;
-        cursor: pointer;
-    }
-
     #gSignOutWrapper{
         display: none;
     }
@@ -48,12 +37,16 @@
         padding-bottom: 2vh;
         margin-left: 6px;
         margin-right: 6px;
+
     }
 
     #my-signin2 {
         align-self: flex-end;
         padding-bottom: 2vh;
+        margin-left: 18px;
+        margin-right: 6px;
     }
+
 
 /*Media change for button*/
     @media screen {
